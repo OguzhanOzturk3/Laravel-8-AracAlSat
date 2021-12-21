@@ -4,6 +4,7 @@
 @include('admin._header')
 @include('admin._sidebar')
 @include('admin._headerDesktop')
+@section('content')
 <div class="page-container">
 <!-- MAIN CONTENT-->
 <div class="main-content">
@@ -41,5 +42,6 @@
 </div>
 </div>
 </div>
+@endsection
 @include('admin._footer')
 
