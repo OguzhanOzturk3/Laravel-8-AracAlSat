@@ -21,6 +21,10 @@
 
                                 <div class="card-body">
                                     <div class="col-lg-12">
+                                        <a href ="{{route('admin_category_add')}}" type="button" class="btn btn-success">Add Category</a>
+                                        <div>
+                                            <br>
+                                        </div>
                                         <div class="table-responsive table--no-card m-b-30">
                                             <table class="table table-borderless table-striped table-earning">
                                                 <thead>
@@ -43,7 +47,7 @@
                                                         <td>{{$rs->title}}</td>
                                                         <td>{{$rs->status}}</td>
                                                         <td>Edit</td>
-                                                        <td>Delete</td>
+                                                        <td><a href="{{route('admin_category_delete',['id' => $rs->id])}}" onclick = "return confirm('Delete ! are you sure?')">Delete</a></td>
                                                     </tr>
                                                 @endforeach
 
