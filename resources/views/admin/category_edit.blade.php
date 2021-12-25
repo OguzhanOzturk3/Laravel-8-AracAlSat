@@ -1,6 +1,6 @@
 @extends('layouts.admin')
 
-@section('title', 'Add Category')
+@section('title', 'Edit Category')
 @include('admin._header')
 @include('admin._sidebar')
 @include('admin._headerDesktop')
@@ -16,7 +16,7 @@
 
                     <div class="card">
                         <div class="card-header">
-                            <strong class="card-title">Add Category</strong>
+                            <strong class="card-title">Edit Category</strong>
                         </div>
 
                         <div class="card-body">
@@ -26,7 +26,7 @@
                                     <div class="col-lg-6">
                                         <div class="card">
                                             <div class="card-body card-block">
-                                                <form role="form" action="{{route('admin_category_create')}}" method="post"  class="form-horizontal">
+                                                <form role="form" action="{{route('admin_category_update',['id'=>$data->id])}}" method="post"  class="form-horizontal">
                                                     @csrf
 
                                                     <div class="row form-group">
@@ -35,9 +35,11 @@
                                                         </div>
                                                         <div class="col-12 col-md-9">
                                                             <select name="parent_id" id="select" class="form-control">
-                                                                <option value="0" selected = "selected">Main Category</option>
+
+
+                                                                <option value="0" >Main Category</option>
                                                                 @foreach($datalist as $rs)
-                                                                <option value="{{$rs->id}}">{{$rs->title}}</option>
+                                                                <option value="{{$rs->id}}" @if ($rs->id==$data->parent_id) selected="selected" @endif>{{$rs->title}}</option>
                                                                 @endforeach
                                                             </select>
 
@@ -48,7 +50,7 @@
                                                             <label>Title</label>
                                                         </div>
                                                         <div class="col-12 col-md-9">
-                                                            <input type="text" id="text-input" name="title" placeholder="Text" class="form-control">
+                                                            <input type="text" id="text-input" name="title" value="{{$data->title}}" class="form-control" >
 
                                                         </div>
 
@@ -58,7 +60,7 @@
                                                             <label>Keywords</label>
                                                         </div>
                                                         <div class="col-12 col-md-9">
-                                                            <input type="text" id="text-input" name="keywords" placeholder="Text" class="form-control">
+                                                            <input type="text" id="text-input" name="keywords" value="{{$data->keywords}}" class="form-control" >
 
                                                         </div>
 
@@ -68,7 +70,7 @@
                                                             <label>Description</label>
                                                         </div>
                                                         <div class="col-12 col-md-9">
-                                                            <input type="text" id="text-input" name="description" placeholder="Text" class="form-control">
+                                                            <input type="text" id="text-input" name="description" value="{{$data->description}}"  class="form-control" >
 
                                                         </div>
                                                     </div>
@@ -78,14 +80,15 @@
                                                         </div>
                                                         <div class="col-12 col-md-9">
                                                             <select name="status" id="select" class="form-control">
-                                                                <option selected = "selected">False</option>
+                                                                <option selected = "status">{{$data->status}}</option>
+                                                                <option>False</option>
                                                                 <option>True</option>
                                                             </select>
                                                         </div>
                                                     </div>
                                                     <div class="card-footer">
                                                         <button type="submit" class="btn btn-primary btn-sm">
-                                                            <i class="fa fa-dot-circle-o"></i> Add Category
+                                                            <i class="fa fa-dot-circle-o"></i> Edit Category
                                                         </button>
 
                                                     </div>
