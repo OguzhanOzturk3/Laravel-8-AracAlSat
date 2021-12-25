@@ -5,6 +5,7 @@
             <img src="{{asset('assets')}}/admin/images/icon/logo.png" alt="Cool Admin" />
         </a>
     </div>
+
     <div class="menu-sidebar__content js-scrollbar1">
         <nav class="navbar-sidebar">
             <ul class="list-unstyled navbar__list">
@@ -13,6 +14,10 @@
                 <li>
                     <a href="{{route('admin_category')}}">
                         <i class="fas fa-table"></i>Category</a>
+                </li>
+                <li>
+                    <a href="{{route('admin_car')}}">
+                        <i class="fas fa-table"></i>Car</a>
                 </li>
 
                 <li class="has-sub">

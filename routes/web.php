@@ -41,8 +41,20 @@ Route::middleware('auth')->prefix('admin')->group(function (){
     Route::get('category/delete/{id}',[\App\Http\Controllers\Admin\CategoryController::class, 'destroy'])->name('admin_category_delete');
     Route::get('category/show',[\App\Http\Controllers\Admin\CategoryController::class, 'show'])->name('admin_category_show');
 
+    Route::prefix('car')->group(function(){
 
+        Route::get('/',[\App\Http\Controllers\Admin\CarController::class, 'index'])->name('admin_car');
+        Route::get('create',[\App\Http\Controllers\Admin\CarController::class, 'create'])->name('admin_car_add');
+        Route::post('store',[\App\Http\Controllers\Admin\CarController::class, 'store'])->name('admin_car_store');
+        Route::get('edit/{id}',[\App\Http\Controllers\Admin\CarController::class, 'edit'])->name('admin_car_edit');
+        Route::post('update/{id}',[\App\Http\Controllers\Admin\CarController::class, 'update'])->name('admin_car_update');
+        Route::get('delete/{id}',[\App\Http\Controllers\Admin\CarController::class, 'destroy'])->name('admin_car_delete');
+        Route::get('show',[\App\Http\Controllers\Admin\CarController::class, 'show'])->name('admin_car_show');
+
+    });
 });
+
+
 Route::get('/admin', [\App\Http\Controllers\Admin\HomeController::class, 'index'])->name('admin_home')->middleware('auth');
 
 Route::get('/admin/login', [HomeController::class, 'login'])->name('admin_login');
