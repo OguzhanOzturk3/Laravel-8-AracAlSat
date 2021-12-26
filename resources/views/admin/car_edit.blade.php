@@ -387,7 +387,7 @@
                                                             <input type="file" name="image" value="{{$data->image}}" class="form-control">
 
                                                             @if ($data->image)
-                                                                <img src="{{\Illuminate\Support\Facades\Storage::url($data->image)}}"  height="100" alt="" >
+                                                                <img src="{{\Illuminate\Support\Facades\Storage::url($data->image)}}"  width="100" height="100" alt="" >
                                                             @endif
                                                         </div>
 

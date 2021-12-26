@@ -34,13 +34,11 @@
                                                     <th>Title(s)</th>
                                                     <th>Status</th>
                                                     <th>Image</th>
+                                                    <th>Image Gallery</th>
                                                     <th>Price</th>
                                                     <th>Make</th>
-                                                    <th>Model</th>
-                                                    <th>Series</th>
-                                                    <th>Year</th>
-                                                    <th>Edit</th>
-                                                    <th>Delete</th>
+                                                    <th>Action</th>
+
                                                 </tr>
                                                 </thead>
                                                 <tbody>
@@ -54,16 +52,20 @@
                                                         <td>{{$rs->status}}</td>
                                                         <td>
                                                             @if ($rs->image)
-                                                            <img src="{{\Illuminate\Support\Facades\Storage::url($rs->image)}}" height="30" alt="">
+                                                            <img src="{{\Illuminate\Support\Facades\Storage::url($rs->image)}}" width="50" height="50" alt="">
                                                             @endif
+                                                        </td>
+                                                        <td >
+                                                            <a href="{{route('admin_image_add',['car_id' => $rs->id])}}" onclick="return !window.open(this.href, '','top=50 left=100 width=1100, height=700')">
+                                                                <img src="{{asset('assets\admin\images')}}/gallery.png" width="50" height="50">
+                                                            </a>
                                                         </td>
                                                         <td>{{$rs->price}}</td>
                                                         <td>{{$rs->make}}</td>
-                                                        <td>{{$rs->model}}</td>
-                                                        <td>{{$rs->series}}</td>
-                                                        <td>{{$rs->year}}</td>
-                                                        <td><a href = "{{route('admin_car_edit',['id' => $rs->id])}}">Edit</a></td>
-                                                        <td><a href = "{{route('admin_car_delete',['id' => $rs->id])}}" onclick = "return confirm('Delete ! are you sure?')">Delete</a></td>
+                                                        <td><a href = "{{route('admin_car_edit',['id' => $rs->id])}}"><img src="{{asset('assets\admin\images')}}/edit.png" width="35" height="35"></a>
+                                                            <a href = "{{route('admin_car_delete',['id' => $rs->id])}}" onclick = "return confirm('Delete ! are you sure?')"><img src="{{asset('assets\admin\images')}}/delete.png" width="35" height="35"></a>
+                                                        </td>
+
                                                     </tr>
                                                 @endforeach
 

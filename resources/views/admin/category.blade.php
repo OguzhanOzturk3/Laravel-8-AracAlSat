@@ -33,8 +33,8 @@
                                                     <th>Parent</th>
                                                     <th>Title(s)</th>
                                                     <th>Status</th>
-                                                    <th>Edit</th>
-                                                    <th>Delete</th>
+                                                    <th>Action</th>
+
                                                 </tr>
                                                 </thead>
                                                 <tbody>
@@ -46,8 +46,10 @@
                                                         <td>{{$rs->parent_id}}</td>
                                                         <td>{{$rs->title}}</td>
                                                         <td>{{$rs->status}}</td>
-                                                        <td><a href = "{{route('admin_category_edit',['id' => $rs->id])}}">Edit</a></td>
-                                                        <td><a href = "{{route('admin_category_delete',['id' => $rs->id])}}" onclick = "return confirm('Delete ! are you sure?')">Delete</a></td>
+                                                        <td><a href = "{{route('admin_category_edit',['id' => $rs->id])}}"><img src="{{asset('assets\admin\images')}}/edit.png" width="35" height="35"></a>
+                                                            <a href = "{{route('admin_category_delete',['id' => $rs->id])}}" onclick = "return confirm('Delete ! are you sure?')"><img src="{{asset('assets\admin\images')}}/delete.png" width="35" height="35"></a>
+                                                        </td>
+
                                                     </tr>
                                                 @endforeach
 
