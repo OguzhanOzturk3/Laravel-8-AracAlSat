@@ -4,6 +4,9 @@
 @include('admin._header')
 @include('admin._sidebar')
 @include('admin._headerDesktop')
+@section('javascript')
+    <script src="https://cdn.ckeditor.com/4.17.1/standard/ckeditor.js"></script>
+@endsection
 @section('content')
 <div class="page-container">
 <!-- MAIN CONTENT-->
@@ -23,10 +26,10 @@
 
                             <div class="typo-articles">
                                 <div class="row">
-                                    <div class="col-lg-6">
+                                    <div class="col-lg-12">
                                         <div class="card">
                                             <div class="card-body card-block">
-                                                <form role="form" action="{{route('admin_car_update',['id'=>$data->id])}}" method="post"  class="form-horizontal">
+                                                <form role="form" action="{{route('admin_car_update',['id'=>$data->id])}}" method="post"  class="form-horizontal" enctype="multipart/form-data">
                                                     @csrf
 
                                                     <div class="row form-group">
@@ -79,8 +82,11 @@
                                                             <label>Detail</label>
                                                         </div>
                                                         <div class="col-12 col-md-9">
-                                                            <input type="text" id="text-input" name="detail"  value="{{$data->detail}} " placeholder="Text" class="form-control">
 
+                                                            <textarea name="detail" >{{$data->detail}}</textarea>
+                                                            <script>
+                                                                CKEDITOR.replace( 'detail' );
+                                                            </script>
                                                         </div>
 
                                                     </div>
@@ -354,7 +360,7 @@
                                                         </div>
                                                         <div class="col-12 col-md-9">
                                                             <select name="exchange" id="select" class="form-control">
-                                                                <option">{{$data->exchange}}</option>
+                                                                <option>{{$data->exchange}}</option>
                                                                 <option selected = "selected">Yes</option>
                                                                 <option>No</option>
                                                             </select>
@@ -373,7 +379,19 @@
                                                         </div>
                                                     </div>
 
+                                                    <div class="row form-group" >
+                                                        <div class="col col-md-3">
+                                                            <label>Image</label>
+                                                        </div>
+                                                        <div class="col-12 col-md-9">
+                                                            <input type="file" name="image" value="{{$data->image}}" class="form-control">
 
+                                                            @if ($data->image)
+                                                                <img src="{{\Illuminate\Support\Facades\Storage::url($data->image)}}"  height="100" alt="" >
+                                                            @endif
+                                                        </div>
+
+                                                    </div>
 
                                                     <div class="row form-group">
                                                         <div class="col col-md-3">

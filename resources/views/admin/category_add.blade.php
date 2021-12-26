@@ -23,7 +23,7 @@
 
                             <div class="typo-articles">
                                 <div class="row">
-                                    <div class="col-lg-6">
+                                    <div class="col-lg-12">
                                         <div class="card">
                                             <div class="card-body card-block">
                                                 <form role="form" action="{{route('admin_category_create')}}" method="post"  class="form-horizontal">

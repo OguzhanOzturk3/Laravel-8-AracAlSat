@@ -52,7 +52,11 @@
                                                         <td>{{$rs->category_id}}</td>
                                                         <td>{{$rs->title}}</td>
                                                         <td>{{$rs->status}}</td>
-                                                        <td>{{$rs->image}}</td>
+                                                        <td>
+                                                            @if ($rs->image)
+                                                            <img src="{{\Illuminate\Support\Facades\Storage::url($rs->image)}}" height="30" alt="">
+                                                            @endif
+                                                        </td>
                                                         <td>{{$rs->price}}</td>
                                                         <td>{{$rs->make}}</td>
                                                         <td>{{$rs->model}}</td>

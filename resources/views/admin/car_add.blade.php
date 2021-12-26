@@ -4,6 +4,9 @@
 @include('admin._header')
 @include('admin._sidebar')
 @include('admin._headerDesktop')
+@section('javascript')
+    <script src="https://cdn.ckeditor.com/4.17.1/standard/ckeditor.js"></script>
+@endsection
 @section('content')
 <div class="page-container">
 <!-- MAIN CONTENT-->
@@ -23,10 +26,10 @@
 
                             <div class="typo-articles">
                                 <div class="row">
-                                    <div class="col-lg-6">
+                                    <div class="col-lg-12">
                                         <div class="card">
                                             <div class="card-body card-block">
-                                                <form role="form" action="{{route('admin_car_store')}}" method="post"  class="form-horizontal">
+                                                <form role="form" action="{{route('admin_car_store')}}" method="post"  class="form-horizontal" enctype="multipart/form-data">
                                                     @csrf
 
                                                     <div class="row form-group">
@@ -79,9 +82,11 @@
                                                             <label>Detail</label>
                                                         </div>
                                                         <div class="col-12 col-md-9">
-                                                            <input type="text" id="text-input" name="detail" placeholder="Text" class="form-control">
-
-                                                        </div>
+                                                            <textarea name="detail"></textarea>
+                                                            <script>
+                                                                CKEDITOR.replace( 'detail' );
+                                                            </script>
+                                                            </div>
 
                                                     </div>
                                                     <div class="row form-group">
@@ -361,7 +366,16 @@
                                                         </div>
                                                     </div>
 
+                                                    <div class="row form-group">
+                                                        <div class="col col-md-3">
+                                                            <label>Image</label>
+                                                        </div>
+                                                        <div class="col-12 col-md-9">
+                                                            <input type="file" name="image" class="form-control">
 
+                                                        </div>
+
+                                                    </div>
 
                                                     <div class="row form-group">
                                                         <div class="col col-md-3">
