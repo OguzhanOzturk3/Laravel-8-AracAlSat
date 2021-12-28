@@ -48,7 +48,7 @@
                                                     <tr>
                                                         <td>{{$rs->id}}</td>
                                                         <td>{{$rs->category_id}}</td>
-                                                        <td>{{$rs->title}}</td>
+                                                        <td >{{$rs->title}}</td>
                                                         <td>{{$rs->status}}</td>
                                                         <td>
                                                             @if ($rs->image)

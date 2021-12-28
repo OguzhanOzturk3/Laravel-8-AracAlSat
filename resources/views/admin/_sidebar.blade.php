@@ -20,9 +20,11 @@
                         <i class="fas fa-table"></i>Car</a>
                 </li>
 
+
+
                 <li class="has-sub">
                     <a class="js-arrow" href="#">
-                        <i class="fas fa-copy"></i>Products</a>
+                        <i class="fas fa-copy"></i>Açılır Kutu Örnek</a>
                     <ul class="list-unstyled navbar__sub-list js-sub-list">
                         <li>
                             <a href="login.html">Login</a>
@@ -34,6 +36,10 @@
                             <a href="forget-pass.html">Forget Password</a>
                         </li>
                     </ul>
+                </li>
+                <li>
+                    <a class="js-arrow open" href="{{route('admin_setting')}}">
+                        <i class="fas fa-desktop"></i>Setting</a>
                 </li>
             </ul>
         </nav>
