@@ -38,12 +38,14 @@
                                                 </tr>
                                                 </thead>
                                                 <tbody>
-                                                @foreach($datalist as $rs)
+                                                @foreach($dataList as $rs)
                                                     <p></p>
 
                                                     <tr>
                                                         <td>{{$rs->id}}</td>
-                                                        <td>{{$rs->parent_id}}</td>
+                                                        <td>
+                                                            {{\App\Http\Controllers\Admin\CategoryController::getParentsTree($rs,$rs->title)}}
+                                                        </td>
                                                         <td>{{$rs->title}}</td>
                                                         <td>{{$rs->status}}</td>
                                                         <td><a href = "{{route('admin_category_edit',['id' => $rs->id])}}"><img src="{{asset('assets\admin\images')}}/edit.png" width="35" height="35"></a>

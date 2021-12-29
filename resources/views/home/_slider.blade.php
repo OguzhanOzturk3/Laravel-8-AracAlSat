@@ -1,64 +1,77 @@
-<section id="slider"><!--slider-->
-    <div class="container">
-        <div class="row">
-            <div class="col-sm-12">
-                <div id="slider-carousel" class="carousel slide" data-ride="carousel">
-                    <ol class="carousel-indicators">
-                        <li data-target="#slider-carousel" data-slide-to="0" class="active"></li>
-                        <li data-target="#slider-carousel" data-slide-to="1"></li>
-                        <li data-target="#slider-carousel" data-slide-to="2"></li>
-                    </ol>
-
-                    <div class="carousel-inner">
-                        <div class="item active">
-                            <div class="col-sm-6">
-                                <h1><span>E</span>-SHOPPER</h1>
-                                <h2>Free E-Commerce Template</h2>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
-                                <button type="button" class="btn btn-default get">Get it now</button>
-                            </div>
-                            <div class="col-sm-6">
-                                <img src="{{asset('assets')}}/images/home/girl1.jpg" class="girl img-responsive" alt="" />
-                                <img src="{{asset('assets')}}/images/home/pricing.png"  class="pricing" alt="" />
-                            </div>
+<!-- Start slider -->
+<section id="aa-slider">
+    <div class="aa-slider-area">
+        <div id="sequence" class="seq">
+            <div class="seq-screen">
+                <ul class="seq-canvas">
+                    <!-- single slide item -->
+                    <li>
+                        <div class="seq-model">
+                            <img data-seq src="{{asset('assets')}}/img/slider/1.jpg" alt="Men slide img" />
                         </div>
-                        <div class="item">
-                            <div class="col-sm-6">
-                                <h1><span>E</span>-SHOPPER</h1>
-                                <h2>100% Responsive Design</h2>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
-                                <button type="button" class="btn btn-default get">Get it now</button>
-                            </div>
-                            <div class="col-sm-6">
-                                <img src="{{asset('assets')}}/images/home/girl2.jpg" class="girl img-responsive" alt="" />
-                                <img src="{{asset('assets')}}/images/home/pricing.png"  class="pricing" alt="" />
-                            </div>
+                        <div class="seq-title">
+                            <span data-seq>Save Up to 75% Off</span>
+                            <h2 data-seq>Men Collection</h2>
+                            <p data-seq>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minus, illum.</p>
+                            <a data-seq href="#" class="aa-shop-now-btn aa-secondary-btn">SHOP NOW</a>
                         </div>
-
-                        <div class="item">
-                            <div class="col-sm-6">
-                                <h1><span>E</span>-SHOPPER</h1>
-                                <h2>Free Ecommerce Template</h2>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
-                                <button type="button" class="btn btn-default get">Get it now</button>
-                            </div>
-                            <div class="col-sm-6">
-                                <img src="{{asset('assets')}}/images/home/girl3.jpg" class="girl img-responsive" alt="" />
-                                <img src="{{asset('assets')}}/images/home/pricing.png" class="pricing" alt="" />
-                            </div>
+                    </li>
+                    <!-- single slide item -->
+                    <li>
+                        <div class="seq-model">
+                            <img data-seq src="{{asset('assets')}}/img/slider/2.jpg" alt="Wristwatch slide img" />
                         </div>
-
-                    </div>
-
-                    <a href="#slider-carousel" class="left control-carousel hidden-xs" data-slide="prev">
-                        <i class="fa fa-angle-left"></i>
-                    </a>
-                    <a href="#slider-carousel" class="right control-carousel hidden-xs" data-slide="next">
-                        <i class="fa fa-angle-right"></i>
-                    </a>
-                </div>
-
+                        <div class="seq-title">
+                            <span data-seq>Save Up to 40% Off</span>
+                            <h2 data-seq>Wristwatch Collection</h2>
+                            <p data-seq>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minus, illum.</p>
+                            <a data-seq href="#" class="aa-shop-now-btn aa-secondary-btn">SHOP NOW</a>
+                        </div>
+                    </li>
+                    <!-- single slide item -->
+                    <li>
+                        <div class="seq-model">
+                            <img data-seq src="{{asset('assets')}}/img/slider/3.jpg" alt="Women Jeans slide img" />
+                        </div>
+                        <div class="seq-title">
+                            <span data-seq>Save Up to 75% Off</span>
+                            <h2 data-seq>Jeans Collection</h2>
+                            <p data-seq>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minus, illum.</p>
+                            <a data-seq href="#" class="aa-shop-now-btn aa-secondary-btn">SHOP NOW</a>
+                        </div>
+                    </li>
+                    <!-- single slide item -->
+                    <li>
+                        <div class="seq-model">
+                            <img data-seq src="{{asset('assets')}}/img/slider/4.jpg" alt="Shoes slide img" />
+                        </div>
+                        <div class="seq-title">
+                            <span data-seq>Save Up to 75% Off</span>
+                            <h2 data-seq>Exclusive Shoes</h2>
+                            <p data-seq>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minus, illum.</p>
+                            <a data-seq href="#" class="aa-shop-now-btn aa-secondary-btn">SHOP NOW</a>
+                        </div>
+                    </li>
+                    <!-- single slide item -->
+                    <li>
+                        <div class="seq-model">
+                            <img data-seq src="{{asset('assets')}}/img/slider/5.jpg" alt="Male Female slide img" />
+                        </div>
+                        <div class="seq-title">
+                            <span data-seq>Save Up to 50% Off</span>
+                            <h2 data-seq>Best Collection</h2>
+                            <p data-seq>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minus, illum.</p>
+                            <a data-seq href="#" class="aa-shop-now-btn aa-secondary-btn">SHOP NOW</a>
+                        </div>
+                    </li>
+                </ul>
             </div>
+            <!-- slider navigation btn -->
+            <fieldset class="seq-nav" aria-controls="sequence" aria-label="Slider buttons">
+                <a type="button" class="seq-prev" aria-label="Previous"><span class="fa fa-angle-left"></span></a>
+                <a type="button" class="seq-next" aria-label="Next"><span class="fa fa-angle-right"></span></a>
+            </fieldset>
         </div>
     </div>
-</section><!--/slider-->
+</section>
+<!-- / slider -->

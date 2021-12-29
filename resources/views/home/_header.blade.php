@@ -1,117 +1,140 @@
-<header id="header"><!--header-->
-    <div class="header_top"><!--header_top-->
-        <div class="container">
-            <div class="row">
-                <div class="col-sm-6">
-                    <div class="contactinfo">
-                        <ul class="nav nav-pills">
-                            <li><a href="#"><i class="fa fa-phone"></i> +2 95 01 88 821</a></li>
-                            <li><a href="#"><i class="fa fa-envelope"></i> info@domain.com</a></li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="col-sm-6">
-                    <div class="social-icons pull-right">
-                        <ul class="nav navbar-nav">
-                            <li><a href="#"><i class="fa fa-facebook"></i></a></li>
-                            <li><a href="#"><i class="fa fa-twitter"></i></a></li>
-                            <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
-                            <li><a href="#"><i class="fa fa-dribbble"></i></a></li>
-                            <li><a href="#"><i class="fa fa-google-plus"></i></a></li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div><!--/header_top-->
 
-    <div class="header-middle"><!--header-middle-->
+<!-- / wpf loader Two -->
+<!-- SCROLL TOP BUTTON -->
+<a class="scrollToTop" href="#"><i class="fa fa-chevron-up"></i></a>
+<!-- END SCROLL TOP BUTTON -->
+
+
+<!-- Start header section -->
+<header id="aa-header">
+    <!-- start header top  -->
+    <div class="aa-header-top">
         <div class="container">
             <div class="row">
-                <div class="col-sm-4">
-                    <div class="logo pull-left">
-                        <a href="index.html"><img src="{{asset('assets')}}/images/home/logo.png" alt="" /></a>
-                    </div>
-                    <div class="btn-group pull-right">
-                        <div class="btn-group">
-                            <button type="button" class="btn btn-default dropdown-toggle usa" data-toggle="dropdown">
-                                USA
-                                <span class="caret"></span>
-                            </button>
-                            <ul class="dropdown-menu">
-                                <li><a href="#">Canada</a></li>
-                                <li><a href="#">UK</a></li>
+                <div class="col-md-12">
+                    <div class="aa-header-top-area">
+                        <!-- start header top left -->
+                        <div class="aa-header-top-left">
+                            <!-- start language -->
+                            <div class="aa-language">
+                                <div class="dropdown">
+                                    <a class="btn dropdown-toggle" href="#" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                                        <img src="{{asset('assets')}}/img/flag/english.jpg" alt="english flag">ENGLISH
+                                        <span class="caret"></span>
+                                    </a>
+                                    <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+                                        <li><a href="#"><img src="{{asset('assets')}}/img/flag/french.jpg" alt="">FRENCH</a></li>
+                                        <li><a href="#"><img src="{{asset('assets')}}/img/flag/english.jpg" alt="">ENGLISH</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <!-- / language -->
+
+                            <!-- start currency -->
+                            <div class="aa-currency">
+                                <div class="dropdown">
+                                    <a class="btn dropdown-toggle" href="#" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                                        <i class="fa fa-usd"></i>USD
+                                        <span class="caret"></span>
+                                    </a>
+                                    <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+                                        <li><a href="#"><i class="fa fa-euro"></i>EURO</a></li>
+                                        <li><a href="#"><i class="fa fa-jpy"></i>YEN</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <!-- / currency -->
+                            <!-- start cellphone -->
+                            <div class="cellphone hidden-xs">
+                                <p><span class="fa fa-phone"></span>00-62-658-658</p>
+                            </div>
+                            <!-- / cellphone -->
+                        </div>
+                        <!-- / header top left -->
+                        <div class="aa-header-top-right">
+                            <ul class="aa-head-top-nav-right">
+                                <li><a href="account.html">My Account</a></li>
+                                <li class="hidden-xs"><a href="wishlist.html">Wishlist</a></li>
+                                <li class="hidden-xs"><a href="cart.html">My Cart</a></li>
+                                <li class="hidden-xs"><a href="checkout.html">Checkout</a></li>
+                                <li><a href="" data-toggle="modal" data-target="#login-modal">Login</a></li>
                             </ul>
                         </div>
-
-                        <div class="btn-group">
-                            <button type="button" class="btn btn-default dropdown-toggle usa" data-toggle="dropdown">
-                                DOLLAR
-                                <span class="caret"></span>
-                            </button>
-                            <ul class="dropdown-menu">
-                                <li><a href="#">Canadian Dollar</a></li>
-                                <li><a href="#">Pound</a></li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-sm-8">
-                    <div class="shop-menu pull-right">
-                        <ul class="nav navbar-nav">
-                            <li><a href="#"><i class="fa fa-user"></i> Account</a></li>
-                            <li><a href="#"><i class="fa fa-star"></i> Wishlist</a></li>
-                            <li><a href="checkout.html"><i class="fa fa-crosshairs"></i> Checkout</a></li>
-                            <li><a href="cart.html"><i class="fa fa-shopping-cart"></i> Cart</a></li>
-                            <li><a href="login.html"><i class="fa fa-lock"></i> Login</a></li>
-                        </ul>
                     </div>
                 </div>
             </div>
         </div>
-    </div><!--/header-middle-->
+    </div>
+    <!-- / header top  -->
 
-    <div class="header-bottom"><!--header-bottom-->
+    <!-- start header bottom  -->
+    <div class="aa-header-bottom">
         <div class="container">
             <div class="row">
-                <div class="col-sm-9">
-                    <div class="navbar-header">
-                        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                            <span class="sr-only">Toggle navigation</span>
-                            <span class="icon-bar"></span>
-                            <span class="icon-bar"></span>
-                            <span class="icon-bar"></span>
-                        </button>
-                    </div>
-                    <div class="mainmenu pull-left">
-                        <ul class="nav navbar-nav collapse navbar-collapse">
-                            <li><a href="index.html" class="active">Home</a></li>
-                            <li class="dropdown"><a href="#">Shop<i class="fa fa-angle-down"></i></a>
-                                <ul role="menu" class="sub-menu">
-                                    <li><a href="shop.html">Products</a></li>
-                                    <li><a href="product-details.html">Product Details</a></li>
-                                    <li><a href="checkout.html">Checkout</a></li>
-                                    <li><a href="cart.html">Cart</a></li>
-                                    <li><a href="login.html">Login</a></li>
+                <div class="col-md-12">
+                    <div class="aa-header-bottom-area">
+                        <!-- logo  -->
+                        <div class="aa-logo">
+                            <!-- Text based logo -->
+                            <a href="index.html">
+                                <span class="fa fa-shopping-cart"></span>
+                                <p>daily<strong>Shop</strong> <span>Your Shopping Partner</span></p>
+                            </a>
+                            <!-- img based logo -->
+                            <!-- <a href="index.html"><img src="{{asset('assets')}}/img/logo.jpg" alt="logo img"></a> -->
+                        </div>
+                        <!-- / logo  -->
+                        <!-- cart box -->
+                        <div class="aa-cartbox">
+                            <a class="aa-cart-link" href="#">
+                                <span class="fa fa-shopping-basket"></span>
+                                <span class="aa-cart-title">SHOPPING CART</span>
+                                <span class="aa-cart-notify">2</span>
+                            </a>
+                            <div class="aa-cartbox-summary">
+                                <ul>
+                                    <li>
+                                        <a class="aa-cartbox-img" href="#"><img src="{{asset('assets')}}/img/woman-small-2.jpg" alt="img"></a>
+                                        <div class="aa-cartbox-info">
+                                            <h4><a href="#">Product Name</a></h4>
+                                            <p>1 x $250</p>
+                                        </div>
+                                        <a class="aa-remove-product" href="#"><span class="fa fa-times"></span></a>
+                                    </li>
+                                    <li>
+                                        <a class="aa-cartbox-img" href="#"><img src="{{asset('assets')}}/img/woman-small-1.jpg" alt="img"></a>
+                                        <div class="aa-cartbox-info">
+                                            <h4><a href="#">Product Name</a></h4>
+                                            <p>1 x $250</p>
+                                        </div>
+                                        <a class="aa-remove-product" href="#"><span class="fa fa-times"></span></a>
+                                    </li>
+                                    <li>
+                      <span class="aa-cartbox-total-title">
+                        Total
+                      </span>
+                                        <span class="aa-cartbox-total-price">
+                        $500
+                      </span>
+                                    </li>
                                 </ul>
-                            </li>
-                            <li class="dropdown"><a href="#">Blog<i class="fa fa-angle-down"></i></a>
-                                <ul role="menu" class="sub-menu">
-                                    <li><a href="blog.html">Blog List</a></li>
-                                    <li><a href="blog-single.html">Blog Single</a></li>
-                                </ul>
-                            </li>
-                            <li><a href="404.html">404</a></li>
-                            <li><a href="contact-us.html">Contact</a></li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="col-sm-3">
-                    <div class="search_box pull-right">
-                        <input type="text" placeholder="Search"/>
+                                <a class="aa-cartbox-checkout aa-primary-btn" href="checkout.html">Checkout</a>
+                            </div>
+                        </div>
+                        <!-- / cart box -->
+                        <!-- search box -->
+                        <div class="aa-search-box">
+                            <form action="">
+                                <input type="text" name="" id="" placeholder="Search here ex. 'man' ">
+                                <button type="submit"><span class="fa fa-search"></span></button>
+                            </form>
+                        </div>
+                        <!-- / search box -->
                     </div>
                 </div>
             </div>
         </div>
-    </div><!--/header-bottom-->
-</header><!--/header-->
+    </div>
+    <!-- / header bottom  -->
+</header>
+<!-- / header section -->
