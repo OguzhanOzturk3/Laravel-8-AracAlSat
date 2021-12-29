@@ -3,7 +3,7 @@
 
     @if(count($subcategory->children))
 
-        <li><a href="#">{{$subcategory->title}} <span class="caret"></span></a>
+        <li><a href="{{route('home')}}">{{$subcategory->title}} <span class="caret"></span></a>
             <ul class="dropdown-menu">
             @include('home.categorytree',['children' => $subcategory->children])
             </ul>

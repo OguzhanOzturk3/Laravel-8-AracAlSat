@@ -1,3 +1,6 @@
+@php
+    $setting = \App\Http\Controllers\HomeController::getsetting()
+@endphp
 <!-- Support section -->
 <section id="aa-support">
     <div class="container">
@@ -49,11 +52,9 @@
                                 <div class="aa-footer-widget">
                                     <h3>Main Menu</h3>
                                     <ul class="aa-footer-nav">
-                                        <li><a href="#">Home</a></li>
-                                        <li><a href="#">Our Services</a></li>
-                                        <li><a href="#">Our Products</a></li>
-                                        <li><a href="#">About Us</a></li>
-                                        <li><a href="#">Contact Us</a></li>
+                                        <li><a href="{{route('home')}}">Home</a></li>
+                                        <li><a href="{{route('aboutus')}}">About Us</a></li>
+                                        <li><a href="{{route('aboutus')}}">Contact Us</a></li>
                                     </ul>
                                 </div>
                             </div>
@@ -88,17 +89,18 @@
                             <div class="col-md-3 col-sm-6">
                                 <div class="aa-footer-widget">
                                     <div class="aa-footer-widget">
-                                        <h3>Contact Us</h3>
+                                        <h3>Contact</h3>
                                         <address>
-                                            <p> 25 Astor Pl, NY 10003, USA</p>
-                                            <p><span class="fa fa-phone"></span>+1 212-982-4589</p>
-                                            <p><span class="fa fa-envelope"></span>dailyshop@gmail.com</p>
+                                            <p> {{$setting->address}}</p>
+                                            <p><span class="fa fa-phone"></span>{{$setting->phone}}</p>
+                                            <p><span class="fa fa-envelope"></span>{{$setting->email}}</p>
                                         </address>
                                         <div class="aa-footer-social">
-                                            <a href="#"><span class="fa fa-facebook"></span></a>
-                                            <a href="#"><span class="fa fa-twitter"></span></a>
-                                            <a href="#"><span class="fa fa-google-plus"></span></a>
-                                            <a href="#"><span class="fa fa-youtube"></span></a>
+
+                                        @if ($setting->facebook != null) <a href="{{$setting->facebook}}" target="_blank" ><span class="fa fa-facebook"></span></a> @endif
+                                        @if ($setting->twitter != null)<a href="{{$setting->twitter}}" target="_blank" ><span class="fa fa-twitter"></span></a>@endif
+                                        @if ($setting->instagram != null)<a href="{{$setting->instagram}}" target="_blank" ><span class="fa fa-instagram"></span></a>@endif
+                                        @if ($setting->youtube != null)<a href="{{$setting->youtube}}" target="_blank" ><span class="fa fa-youtube"></span></a>@endif
                                         </div>
                                     </div>
                                 </div>
@@ -115,7 +117,7 @@
             <div class="row">
                 <div class="col-md-12">
                     <div class="aa-footer-bottom-area">
-                        <p>Designed by <a href="http://www.markups.io/">MarkUps.io</a></p>
+                        <p>Designed by {{$setting->company}}</p>
                         <div class="aa-footer-payment">
                             <span class="fa fa-cc-mastercard"></span>
                             <span class="fa fa-cc-visa"></span>

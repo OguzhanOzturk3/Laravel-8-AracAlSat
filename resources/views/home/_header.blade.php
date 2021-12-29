@@ -1,4 +1,6 @@
-
+@php
+$setting = \App\Http\Controllers\HomeController::getsetting()
+@endphp
 <!-- / wpf loader Two -->
 <!-- SCROLL TOP BUTTON -->
 <a class="scrollToTop" href="#"><i class="fa fa-chevron-up"></i></a>
@@ -20,12 +22,9 @@
                                 <div class="dropdown">
                                     <a class="btn dropdown-toggle" href="#" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
                                         <img src="{{asset('assets')}}/img/flag/english.jpg" alt="english flag">ENGLISH
-                                        <span class="caret"></span>
+
                                     </a>
-                                    <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
-                                        <li><a href="#"><img src="{{asset('assets')}}/img/flag/french.jpg" alt="">FRENCH</a></li>
-                                        <li><a href="#"><img src="{{asset('assets')}}/img/flag/english.jpg" alt="">ENGLISH</a></li>
-                                    </ul>
+
                                 </div>
                             </div>
                             <!-- / language -->
@@ -35,31 +34,45 @@
                                 <div class="dropdown">
                                     <a class="btn dropdown-toggle" href="#" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
                                         <i class="fa fa-usd"></i>USD
-                                        <span class="caret"></span>
+
                                     </a>
-                                    <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
-                                        <li><a href="#"><i class="fa fa-euro"></i>EURO</a></li>
-                                        <li><a href="#"><i class="fa fa-jpy"></i>YEN</a></li>
-                                    </ul>
+
                                 </div>
                             </div>
                             <!-- / currency -->
                             <!-- start cellphone -->
                             <div class="cellphone hidden-xs">
-                                <p><span class="fa fa-phone"></span>00-62-658-658</p>
+                                <p><span class="fa fa-phone"></span>{{$setting->phone}}</p>
                             </div>
                             <!-- / cellphone -->
                         </div>
+
+
                         <!-- / header top left -->
                         <div class="aa-header-top-right">
+
                             <ul class="aa-head-top-nav-right">
-                                <li><a href="account.html">My Account</a></li>
+                                @auth()
+
+                                <li> <a href="{{route('myprofile')}}">{{\Illuminate\Support\Facades\Auth::user()->name}}</a></li>
+                                <li class="hidden-xs"><a href="{{route('myprofile')}}">My Account</a></li>
+                                <li class="hidden-xs"><a href="{{route('logout')}}">Logout</a></li>
+                                @endauth
+                                 @guest()
+                                        <li class="hidden-xs"><a href="/login">Login</a></li>
+                                        <li class="hidden-xs"><a href="/register">Join</a></li>
+                                     <!-- /  <li><a href="/login" data-toggle="modal" data-target="#login-modal">Login</a></li>
+                                      <li><a href="'/register" data-toggle="modal" data-target="#login-modal">Join</a></li> -->
+                                @endguest
                                 <li class="hidden-xs"><a href="wishlist.html">Wishlist</a></li>
                                 <li class="hidden-xs"><a href="cart.html">My Cart</a></li>
-                                <li class="hidden-xs"><a href="checkout.html">Checkout</a></li>
-                                <li><a href="" data-toggle="modal" data-target="#login-modal">Login</a></li>
+
+
                             </ul>
+
                         </div>
+
+
                     </div>
                 </div>
             </div>
@@ -76,7 +89,7 @@
                         <!-- logo  -->
                         <div class="aa-logo">
                             <!-- Text based logo -->
-                            <a href="index.html">
+                            <a href="{{route('home')}}">
                                 <span class="fa fa-shopping-cart"></span>
                                 <p>daily<strong>Shop</strong> <span>Your Shopping Partner</span></p>
                             </a>

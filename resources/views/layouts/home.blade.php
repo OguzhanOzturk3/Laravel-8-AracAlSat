@@ -1,18 +1,22 @@
 
+@php
+    $setting = \App\Http\Controllers\HomeController::getsetting()
+@endphp
 
     <!DOCTYPE html>
     <html lang="en">
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta name="description" content=@yield('description')>
-        <meta name="keyword" content=@yield('keywords')>
-        <meta name="author" content=@yield('author')>
+        <title>"@yield('title')"</title>
+        <meta name="description" content="@yield('description')">
+        <meta name="keyword" content="@yield('keywords')">
+        <meta name="author" content='Oguzhan')>
 
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>@yield('title')</title>
+
 
         <!-- Font awesome -->
         <link href="{{asset('assets')}}/css/font-awesome.css" rel="stylesheet">
@@ -62,7 +66,7 @@
         </div>
     </div>
 </section>
-@include('home._slider')
+
 @section('content')
 
 @show

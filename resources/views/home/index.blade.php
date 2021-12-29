@@ -1,12 +1,15 @@
+@php
+    $setting = \App\Http\Controllers\HomeController::getsetting()
+@endphp
+
 @extends('layouts.home')
-@section('title', 'Laravel Arac Al Sat')
-@section('description')
-    Türkiyenin en iyi araç alım satım sitesi.
-@endsection
-@section('keywords','Araç,Araba,Alım,Satım,İkinci el')
+
+@section('title',$setting->title )
+@section('description'){{$setting->description}}@endsection
+@section('keywords',$setting->keywords)
 
 @section('content')
-
+    @include('home._slider')
     <!-- Start Promo section -->
     <section id="aa-promo">
         <div class="container">

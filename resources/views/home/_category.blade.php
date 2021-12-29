@@ -15,6 +15,7 @@ $parentCategories = \App\Http\Controllers\HomeController::categoryList()
     <div class="navbar-collapse collapse">
         <!-- Left nav -->
         <ul class="nav navbar-nav">
+
             @foreach($parentCategories as $rs)
             <li><a href="#">{{$rs->title}} <span class="caret"></span></a>
                 @if(count($rs->children))
@@ -26,6 +27,12 @@ $parentCategories = \App\Http\Controllers\HomeController::categoryList()
                 @endif
             </li>
             @endforeach
+                <li class="col-lg-4"> <a href=" "> </a></li>
+            <li><a href="{{route('home')}}">Home </a></li>
+            <li><a href="{{route('aboutus')}}">About Us </a></li>
+            <li><a href="{{route('contact')}}">Contact </a></li>
+            <li><a href="{{route('faq')}}">FAQ </a></li>
+
         </ul>
     </div><!--/.nav-collapse -->
 </div>
