@@ -19,6 +19,10 @@
                     <a href="{{route('admin_car')}}">
                         <i class="fas fa-table"></i>Car</a>
                 </li>
+                <li>
+                    <a href="{{route('admin_message')}}">
+                        <i class="fas fa-table"></i>Contact Message</a>
+                </li>
 
 
 

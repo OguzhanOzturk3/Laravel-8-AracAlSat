@@ -39,7 +39,44 @@
                             </div>
                             <div class="col-md-6">
                                 <h2>İletişim Formu</h2>
-                                iletişim formu
+                            @include('home.message')
+                        <div class="aa-contact-address-left">
+                            <form class="comments-form contact-form" action="{{route('sendmessage')}}" method="post">
+                                @csrf
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <input type="text" name="name" placeholder="Your Name" class="form-control">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <input type="email" name="email" placeholder="Email" class="form-control">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <input type="text" name="phone" placeholder="Phone Number" class="form-control">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <input type="text" name="subject" placeholder="Subject" class="form-control">
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <textarea class="form-control" name="message" rows="5" placeholder="Your Message"></textarea>
+                                </div>
+
+
+                                <button type="submit" class="aa-secondary-btn">Send Message</button>
+                            </form>
+                        </div>
+
                         </div>
                                  </div>
 

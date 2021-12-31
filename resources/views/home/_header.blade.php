@@ -1,6 +1,8 @@
 @php
 $setting = \App\Http\Controllers\HomeController::getsetting()
+
 @endphp
+
 <!-- / wpf loader Two -->
 <!-- SCROLL TOP BUTTON -->
 <a class="scrollToTop" href="#"><i class="fa fa-chevron-up"></i></a>
@@ -9,6 +11,7 @@ $setting = \App\Http\Controllers\HomeController::getsetting()
 
 <!-- Start header section -->
 <header id="aa-header">
+
     <!-- start header top  -->
     <div class="aa-header-top">
         <div class="container">

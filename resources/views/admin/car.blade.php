@@ -26,15 +26,15 @@
                                             <br>
                                         </div>
                                         <div class="table-responsive table--no-card m-b-30">
-                                            <table class="table table-borderless table-striped table-earning">
+                                            <table class="col-md-4   table table-borderless table-striped ">
                                                 <thead>
                                                 <tr>
                                                     <th>ID</th>
-                                                    <th>Category</th>
+                                                    <th class="col-3">Category</th>
                                                     <th>Title(s)</th>
                                                     <th>Status</th>
                                                     <th>Image</th>
-                                                    <th>Image Gallery</th>
+                                                    <th class="col-1">Image Gallery</th>
                                                     <th>Price</th>
                                                     <th>Make</th>
                                                     <th>Action</th>

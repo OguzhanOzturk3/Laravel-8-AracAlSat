@@ -1,6 +1,6 @@
 @extends('layouts.admin')
 
-@section('title', 'Category List')
+@section('title', 'Contact Messages List')
 @include('admin._header')
 @include('admin._sidebar')
 @include('admin._headerDesktop')
@@ -16,12 +16,12 @@
 
                             <div class="card">
                                 <div class="card-header">
-                                    <strong class="card-title">Category</strong>
+                                    <strong class="card-title">Car</strong>
                                 </div>
 
                                 <div class="card-body">
                                     <div class="col-lg-12">
-                                        <a href ="{{route('admin_category_add')}}" type="button" class="btn btn-success">Add Category</a>
+                                        <a class="col-12">@include('home.message')</a>
                                         <div>
                                             <br>
                                         </div>
@@ -30,26 +30,44 @@
                                                 <thead>
                                                 <tr>
                                                     <th>ID</th>
-                                                    <th class="col-4">Parent</th>
-                                                    <th class="col-4">Title(s)</th>
+                                                    <th>Name</th>
+                                                    <th>Email</th>
+                                                    <th>Phone</th>
+                                                    <th>Ip Address</th>
+                                                    <th >Subject</th>
+                                                    <th >Message</th>
+                                                    <th>Admin Note</th>
                                                     <th>Status</th>
                                                     <th>Action</th>
 
                                                 </tr>
                                                 </thead>
                                                 <tbody>
-                                                @foreach($dataList as $rs)
+                                                @foreach($datalist as $rs)
                                                     <p></p>
 
                                                     <tr>
                                                         <td>{{$rs->id}}</td>
-                                                        <td>
-                                                            {{\App\Http\Controllers\Admin\CategoryController::getParentsTree($rs,$rs->title)}}
-                                                        </td>
-                                                        <td>{{$rs->title}}</td>
+
+                                                        <td >{{$rs->name}}</td>
+                                                        <td>{{$rs->email}}</td>
+                                                        <td>{{$rs->phone}}</td>
+                                                        <td>{{$rs->ipaddress}}</td>
+                                                        <td>{{$rs->subject}}</td>
+                                                        <td>{{$rs->message}}</td>
+                                                        <td>{{$rs->note}}</td>
                                                         <td>{{$rs->status}}</td>
-                                                        <td><a href = "{{route('admin_category_edit',['id' => $rs->id])}}"><img src="{{asset('assets\admin\images')}}/edit.png" width="35" height="35"></a>
-                                                            <a href = "{{route('admin_category_delete',['id' => $rs->id])}}" onclick = "return confirm('Delete ! are you sure?')"><img src="{{asset('assets\admin\images')}}/delete.png" width="35" height="35"></a>
+
+
+                                                        <td >
+                                                            <a href="{{route('admin_message_edit',['id' => $rs->id])}}" onclick="return !window.open(this.href, '','top=50 left=100 width=1100, height=700')">
+                                                                <img src="{{asset('assets\admin\images')}}/edit.png" width="35" height="35">
+                                                            </a>
+                                                            <a href = "{{route('admin_message_delete',['id' => $rs->id])}}" onclick = "return confirm('Delete ! are you sure?')"><img src="{{asset('assets\admin\images')}}/delete.png" width="35" height="35"></a>
+
+                                                        </td>
+
+
                                                         </td>
 
                                                     </tr>
