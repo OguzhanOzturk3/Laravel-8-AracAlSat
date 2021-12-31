@@ -4,7 +4,7 @@
 
 @extends('layouts.home')
 
-@section('title',$setting->title )
+@section('title','References -'. $setting->title )
 @section('description'){{$setting->description}}@endsection
 @section('keywords',$setting->keywords)
 
@@ -15,10 +15,10 @@
         <div class="aa-catg-head-banner-area">
             <div class="container">
                 <div class="aa-catg-head-banner-content">
-                    <h2>Blank Page</h2>
+                    <h2>References</h2>
                     <ol class="breadcrumb">
                         <li><a href="{{route('home')}}">Home</a></li>
-                        <li class="active">Blank</li>
+                        <li class="active">References</li>
                     </ol>
                 </div>
             </div>
@@ -34,13 +34,8 @@
                     <div class="aa-myaccount-area">
                         <div class="row">
                             <div class="col-md-12">
-
-
-                                İçerik Alanı
-
-
-
-                            </div>
+                                {!! $setting->references !!}
+                                 </div>
 
                         </div>
                     </div>

@@ -4,7 +4,7 @@
 
 @extends('layouts.home')
 
-@section('title',$setting->title )
+@section('title','Contact -'. $setting->title )
 @section('description'){{$setting->description}}@endsection
 @section('keywords',$setting->keywords)
 
@@ -15,10 +15,10 @@
         <div class="aa-catg-head-banner-area">
             <div class="container">
                 <div class="aa-catg-head-banner-content">
-                    <h2>Blank Page</h2>
+                    <h2>Contact</h2>
                     <ol class="breadcrumb">
                         <li><a href="{{route('home')}}">Home</a></li>
-                        <li class="active">Blank</li>
+                        <li class="active">About Us</li>
                     </ol>
                 </div>
             </div>
@@ -34,13 +34,14 @@
                     <div class="aa-myaccount-area">
                         <div class="row">
                             <div class="col-md-12">
-
-
-                                İçerik Alanı
-
-
-
+                                <div class="col-md-6">
+                                {!! $setting->contact !!}
                             </div>
+                            <div class="col-md-6">
+                                <h2>İletişim Formu</h2>
+                                iletişim formu
+                        </div>
+                                 </div>
 
                         </div>
                     </div>
