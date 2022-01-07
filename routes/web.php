@@ -35,6 +35,7 @@ Route::get('/references', [HomeController::class, 'references'])->name('referenc
 Route::get('/faq', [HomeController::class, 'faq'])->name('faq');
 Route::get('/contact', [HomeController::class, 'contact'])->name('contact');
 Route::post('/sendmessage', [HomeController::class, 'sendmessage'])->name('sendmessage');
+Route::get('/car/{id}', [HomeController::class, 'car'])->name('car');
 
 
 //Route::get('/test/{id}/{name}', [HomeController::class, 'test'])->where(['id'=>'[0-9]+','name'=>'[A-Za-z]+']);
@@ -71,6 +72,7 @@ Route::middleware('auth')->prefix('admin')->group(function (){
         Route::post('update/{id}',[MessageController::class, 'update'])->name('admin_message_update');
         Route::get('delete/{id}',[MessageController::class, 'destroy'])->name('admin_message_delete');
         Route::get('show',[MessageController::class, 'show'])->name('admin_message_show');
+
     });
 
     #Car image

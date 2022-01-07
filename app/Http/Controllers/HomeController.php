@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Car;
 use App\Models\Category;
 use App\Models\Message;
 use App\Models\Setting;
@@ -26,10 +27,28 @@ class HomeController extends Controller
     public function index()
     {
         $setting = Setting::first();
-        return view('home.index',['setting'=>$setting,'page'=>'home']);
+        $slider = Car::select('id','title','image','price')->limit(4)->get();
+      //  print_r($slider);
+      //exit();
+        $data= [
+            'setting'=>$setting,
+            'slider'=>$slider,
+            'page'=>'home'
+        ];
+
+        return view('home.index',$data);
     }
 
 
+
+
+
+    public function car($id)
+    {
+        $data = Car::find($id);
+        print_r($data);
+        exit();
+    }
 
     public function aboutus()
     {
@@ -63,7 +82,7 @@ class HomeController extends Controller
         $data->name = $request->input('name');
         $data->email = $request->input('email');
         $data->phone = $request->input('phone');
-        $data->ipaddress = $request->input('ipaddress');
+        $data->ipaddress = $_SERVER["REMOTE_ADDR"];
         $data->subject = $request->input('subject');
         $data->message = $request->input('message');
         $data->save();
