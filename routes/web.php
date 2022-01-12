@@ -37,6 +37,7 @@ Route::get('/contact', [HomeController::class, 'contact'])->name('contact');
 Route::post('/sendmessage', [HomeController::class, 'sendmessage'])->name('sendmessage');
 Route::get('/car/{id}', [HomeController::class, 'car'])->name('car');
 Route::get('/categorycars/{id}', [HomeController::class, 'categorycars'])->name('categorycars');
+Route::get('/addtocart/{id}', [HomeController::class, 'addtocart'])->name('addtocart');
 
 
 //Route::get('/test/{id}/{name}', [HomeController::class, 'test'])->where(['id'=>'[0-9]+','name'=>'[A-Za-z]+']);

@@ -17,7 +17,7 @@ $parentCategories = \App\Http\Controllers\HomeController::categoryList()
         <ul class="nav navbar-nav">
 
             @foreach($parentCategories as $rs)
-            <li><a href="#">{{$rs->title}} <span class="caret"></span></a>
+            <li><a href="">{{$rs->title}} <span class="caret"></span></a>
                 @if(count($rs->children))
 
                     <ul class="dropdown-menu">

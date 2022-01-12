@@ -28,11 +28,17 @@ class HomeController extends Controller
     {
         $setting = Setting::first();
         $slider = Car::select('id','title','image','price')->limit(4)->get();
-      //  print_r($slider);
+        $daily = Car::select('id','title','image','price')->limit(8)->inRandomOrder()->get();
+        $last = Car::select('id','title','image','price')->limit(8)->orderByDesc('id')->get();
+        $picked = Car::select('id','title','image','price')->limit(8)->inRandomOrder()->get();
+      // print_r($picked);
       //exit();
         $data= [
             'setting'=>$setting,
             'slider'=>$slider,
+            'daily'=>$daily,
+            'last'=>$last,
+            'picked'=>$picked,
             'page'=>'home'
         ];
 
@@ -49,6 +55,15 @@ class HomeController extends Controller
         print_r($data);
         exit();
     }
+
+    public function addtocart($id)
+    {
+        echo "ADDtoCart <br>" ;
+        $data = Car::find($id);
+        print_r($data);
+        exit();
+    }
+
 
     public function categorycars($id)
     {
