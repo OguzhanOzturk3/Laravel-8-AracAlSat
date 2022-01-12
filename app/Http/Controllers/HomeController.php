@@ -50,6 +50,16 @@ class HomeController extends Controller
         exit();
     }
 
+    public function categorycars($id)
+    {
+        $datalist = Car::where('category_id',$id)->get();
+        $data = Car::find($id);
+        #print_r($data);
+        #exit();
+        return view('home.category_cars',['data'=>$data,'datalist'=>$datalist]);
+
+    }
+
     public function aboutus()
     {
         $setting = Setting::first();

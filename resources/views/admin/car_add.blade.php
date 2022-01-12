@@ -109,36 +109,36 @@
                                                         </div>
 
                                                     </div>
-                                                    <div class="row form-group">
-                                                        <div class="col col-md-3">
-                                                            <label>Make</label>
-                                                        </div>
-                                                        <div class="col-12 col-md-9">
-                                                            <input type="text" id="text-input" name="make" placeholder="Text" class="form-control">
+{{--                                                   <div class="row form-group">--}}
+{{--                                                        <div class="col col-md-3">--}}
+{{--                                                            <label>Make</label>--}}
+{{--                                                        </div>--}}
+{{--                                                        <div class="col-12 col-md-9">--}}
+{{--                                                            <input type="text" id="text-input" name="make" placeholder="Text" class="form-control">--}}
 
-                                                        </div>
+{{--                                                        </div>--}}
 
-                                                    </div>
-                                                    <div class="row form-group">
-                                                        <div class="col col-md-3">
-                                                            <label>Series</label>
-                                                        </div>
-                                                        <div class="col-12 col-md-9">
-                                                            <input type="text" id="text-input" name="series" placeholder="Text" class="form-control">
+{{--                                                    </div>--}}
+{{--                                                    <div class="row form-group">--}}
+{{--                                                        <div class="col col-md-3">--}}
+{{--                                                            <label>Series</label>--}}
+{{--                                                        </div>--}}
+{{--                                                        <div class="col-12 col-md-9">--}}
+{{--                                                            <input type="text" id="text-input" name="series" placeholder="Text" class="form-control">--}}
 
-                                                        </div>
+{{--                                                        </div>--}}
 
-                                                    </div>
-                                                    <div class="row form-group">
-                                                        <div class="col col-md-3">
-                                                            <label>Model</label>
-                                                        </div>
-                                                        <div class="col-12 col-md-9">
-                                                            <input type="text" id="text-input" name="model" placeholder="Text" class="form-control">
+{{--                                                    </div>--}}
+{{--                                                    <div class="row form-group">--}}
+{{--                                                        <div class="col col-md-3">--}}
+{{--                                                            <label>Model</label>--}}
+{{--                                                        </div>--}}
+{{--                                                        <div class="col-12 col-md-9">--}}
+{{--                                                            <input type="text" id="text-input" name="model" placeholder="Text" class="form-control">--}}
 
-                                                        </div>
+{{--                                                        </div>--}}
 
-                                                    </div>
+{{--                                                    </div>--}}
                                                     <div class="row form-group">
                                                         <div class="col col-md-3">
                                                             <label>Year</label>
