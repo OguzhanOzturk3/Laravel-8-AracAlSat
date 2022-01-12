@@ -177,7 +177,7 @@
                                        @foreach($picked as $rs)
                                         <li>
                                             <figure>
-                                                <a class="aa-product-img" href="#"><img src="{{\Illuminate\Support\Facades\Storage::url($rs->image)}}" alt="polo shirt img width="250" height="250""></a>
+                                                <a class="aa-product-img" href="#"><img src="{{\Illuminate\Support\Facades\Storage::url($rs->image)}}" alt="polo shirt img" width="250" height="250"></a>
                                                 <a class="aa-add-card-btn"href="{{route('addtocart',['id' => $rs->id])}}"><span class="fa fa-shopping-cart"></span>Add To Cart</a>
                                                 <figcaption>
                                                     <h4 class="aa-product-title"><a href="#">{{$rs->title}}</a></h4>

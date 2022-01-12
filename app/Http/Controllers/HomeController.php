@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Car;
 use App\Models\Category;
+use App\Models\Image;
 use App\Models\Message;
 use App\Models\Setting;
 use Hamcrest\Core\Set;
@@ -52,8 +53,10 @@ class HomeController extends Controller
     public function car($id)
     {
         $data = Car::find($id);
-        print_r($data);
-        exit();
+        $datalist = Image::where('car_id',$id)->get();
+        #print_r($data);
+        #exit();
+        return view('home.car_detail',['data'=>$data,'datalist'=>$datalist]);
     }
 
     public function addtocart($id)
@@ -68,9 +71,7 @@ class HomeController extends Controller
     public function categorycars($id)
     {
         $datalist = Car::where('category_id',$id)->get();
-        $data = Car::find($id);
-        #print_r($data);
-        #exit();
+        $data = Category::find($id);
         return view('home.category_cars',['data'=>$data,'datalist'=>$datalist]);
 
     }

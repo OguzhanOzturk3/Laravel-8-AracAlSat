@@ -1,12 +1,12 @@
 @php
-    $setting = \App\Http\Controllers\HomeController::getsetting()
+    $data = \App\Http\Controllers\HomeController::getsetting()
 @endphp
 
 @extends('layouts.home')
 
-@section('title',$setting->title )
-@section('description'){{$setting->description}}@endsection
-@section('keywords',$setting->keywords)
+@section('title',$data->title )
+@section('description'){{$data->description}}@endsection
+@section('keywords',$data->keywords)
 
 @section('content')
     <!-- catg header banner section -->

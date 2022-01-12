@@ -1,10 +1,11 @@
 @php
-    $data = \App\Http\Controllers\HomeController::getsetting()
+    $setting = \App\Http\Controllers\HomeController::getsetting()
+
 @endphp
 
 @extends('layouts.home')
 
-@section('title',$data->title ."Cars List" )
+@section('title',$data->title )
 @section('description'){{$data->description}}@endsection
 @section('keywords',$data->keywords)
 
@@ -18,7 +19,8 @@
                     <h2>Vehicle List</h2>
                     <ol class="breadcrumb">
                         <li><a href="{{route('home')}}">Home</a></li>
-                        <li class="active">Vehicle List </li>
+                        <li><a href="{{route('home')}}">ProductList</a></li>
+                        <li class="active"> {{\App\Http\Controllers\Admin\CategoryController::getParentsTree($data,$data->title)}}</li>
                     </ol>
                 </div>
             </div>
