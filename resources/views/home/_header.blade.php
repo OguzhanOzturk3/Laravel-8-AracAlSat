@@ -140,10 +140,13 @@ $setting = \App\Http\Controllers\HomeController::getsetting()
                         <!-- / cart box -->
                         <!-- search box -->
                         <div class="aa-search-box">
-                            <form action="">
-                                <input type="text" name="" id="" placeholder="Search here ex. 'man' ">
+                            <form action="{{route('getcar')}}" method="post">
+
+                                @csrf
+                                @livewire('search')
                                 <button type="submit"><span class="fa fa-search"></span></button>
                             </form>
+                            @livewireScripts
                         </div>
                         <!-- / search box -->
                     </div>

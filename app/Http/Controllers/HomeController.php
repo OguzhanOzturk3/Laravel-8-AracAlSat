@@ -59,6 +59,30 @@ class HomeController extends Controller
         return view('home.car_detail',['data'=>$data,'datalist'=>$datalist]);
     }
 
+    public function getcar(Request $request)
+    {
+      $search=$request->input('search');
+
+      $count=Car::where('title','like','%'.$search.'%')->get()->count();
+      if($count==1)
+      {
+          $data=Car::where('title','like','%'.$search.'%')->first();
+          return redirect()->route('car',['id'=>$data->id]);
+
+      }
+      else{
+          return redirect()->route('carlist',['search'=>$search]);
+      }
+    }
+
+    public function carlist($search)
+    {
+        $datalist = Car::where('title','like','%'.$search.'%')->get();
+
+        return view('home.search_cars',['search'=>$search,'datalist'=>$datalist]);
+
+    }
+
     public function addtocart($id)
     {
         echo "ADDtoCart <br>" ;

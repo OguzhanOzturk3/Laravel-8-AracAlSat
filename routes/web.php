@@ -38,6 +38,8 @@ Route::post('/sendmessage', [HomeController::class, 'sendmessage'])->name('sendm
 Route::get('/car/{id}', [HomeController::class, 'car'])->name('car');
 Route::get('/categorycars/{id}', [HomeController::class, 'categorycars'])->name('categorycars');
 Route::get('/addtocart/{id}', [HomeController::class, 'addtocart'])->name('addtocart');
+Route::post('/getcar', [HomeController::class, 'getcar'])->name('getcar');
+Route::get('/carlist/{search}', [HomeController::class, 'carlist'])->name('carlist');
 
 
 //Route::get('/test/{id}/{name}', [HomeController::class, 'test'])->where(['id'=>'[0-9]+','name'=>'[A-Za-z]+']);

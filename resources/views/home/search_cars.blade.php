@@ -5,9 +5,8 @@
 
 @extends('layouts.home')
 
-@section('title',$data->title )
-@section('description'){{$data->description}}@endsection
-@section('keywords',$data->keywords)
+@section('title',$search . "Vehicles List" )
+
 
 @section('content')
     <!-- catg header banner section -->
@@ -19,8 +18,7 @@
                     <h2>Vehicle List</h2>
                     <ol class="breadcrumb">
                         <li><a href="{{route('home')}}">Home</a></li>
-                        <li><a href="{{route('home')}}">VehicletList</a></li>
-                        <li class="active"> {{\App\Http\Controllers\Admin\CategoryController::getParentsTree($data,$data->title)}}</li>
+                        <li class="active">{{$search}} Vehicle List</li>
                     </ol>
                 </div>
             </div>
