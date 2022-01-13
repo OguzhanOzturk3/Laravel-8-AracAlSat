@@ -146,7 +146,9 @@ $setting = \App\Http\Controllers\HomeController::getsetting()
                                 @livewire('search')
                                 <button type="submit"><span class="fa fa-search"></span></button>
                             </form>
+                            @section('footerjs')
                             @livewireScripts
+                            @endsection
                         </div>
                         <!-- / search box -->
                     </div>

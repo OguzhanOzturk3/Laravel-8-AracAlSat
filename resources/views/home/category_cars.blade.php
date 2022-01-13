@@ -81,8 +81,18 @@
                                 <a class="aa-add-card-btn"href="#"><span class="fa fa-shopping-cart"></span>Add To Cart</a>
                                 <figcaption>
                                     <a href="#">{{$rs->title}}</a><br>
-                                    <a class="aa-product-price">{{$rs->price}}</a>
-
+                                    <a class="aa-product-price">{{$rs->price}}$</a>
+                                    @php
+                                        $avgrev = \App\Http\Controllers\HomeController::avrgreview($rs->id);
+                                        $countreview = \App\Http\Controllers\HomeController::countreview($rs->id);
+                                    @endphp
+                                    <div class="aa-product-rating">
+                                        @if($avgrev>=1) <span class="fa fa-star" ></span>@endif
+                                        @if($avgrev>=2) <span class="fa fa-star" ></span>@endif
+                                        @if($avgrev>=3) <span class="fa fa-star" ></span>@endif
+                                        @if($avgrev>=4) <span class="fa fa-star" ></span>@endif
+                                        @if($avgrev>=5) <span class="fa fa-star" ></span>@endif
+                                        <span>({{$countreview}})</span>
                                 </figcaption>
                             </figure>
                             <div class="aa-product-hvr-content">

@@ -74,6 +74,22 @@
                                                         <p class="aa-product-avilability">Avilability: <span>In stock</span></p>
                                                     </div>
                                                     <p>{{$data->description}}</p>
+                                                    @php
+                                                    $avgrev = \App\Http\Controllers\HomeController::avrgreview($data->id);
+                                                    $countreview = \App\Http\Controllers\HomeController::countreview($data->id);
+                                                    @endphp
+                                                    <div class="aa-product-rating">
+
+
+
+
+                                                        @if($avgrev>=1) <span class="fa fa-star" ></span>@endif
+                                                        @if($avgrev>=2) <span class="fa fa-star" ></span>@endif
+                                                        @if($avgrev>=3) <span class="fa fa-star" ></span>@endif
+                                                        @if($avgrev>=4) <span class="fa fa-star" ></span>@endif
+                                                        @if($avgrev>=5) <span class="fa fa-star" ></span>@endif
+                                                    </div>
+                                                    <a >{{$countreview}} Reviews(s) {{$avgrev}} /Add Review</a>
 
                                                     <h4>Color</h4>
                                                     <div class="aa-color-tag">
@@ -107,75 +123,30 @@
                                                     </div>
                                             <div class="tab-pane fade " id="review">
                                                 <div class="aa-product-review-area">
-                                                    <h4>2 Reviews for T-Shirt</h4>
+                                                    <h4>{{$countreview}} Reviews </h4>
                                                     <ul class="aa-review-nav">
+                                                        @foreach($reviews as $rs)
                                                         <li>
                                                             <div class="media">
-                                                                <div class="media-left">
-                                                                    <a href="#">
-                                                                        <img class="media-object" src="img/testimonial-img-3.jpg" alt="girl image">
-                                                                    </a>
-                                                                </div>
                                                                 <div class="media-body">
-                                                                    <h4 class="media-heading"><strong>Marla Jobs</strong> - <span>March 26, 2016</span></h4>
+                                                                    <h4 class="media-heading"><strong>{{$rs->user->name}}</strong> - <span>{{$rs->created_at}}</span></h4>
                                                                     <div class="aa-product-rating">
-                                                                        <span class="fa fa-star"></span>
-                                                                        <span class="fa fa-star"></span>
-                                                                        <span class="fa fa-star"></span>
-                                                                        <span class="fa fa-star"></span>
-                                                                        <span class="fa fa-star-o"></span>
+                                                                        @if($rs->rate>=1) <span class="fa fa-star" ></span>@endif
+                                                                        @if($rs->rate>=2) <span class="fa fa-star" ></span>@endif
+                                                                        @if($rs->rate>=3) <span class="fa fa-star" ></span>@endif
+                                                                        @if($rs->rate>=4) <span class="fa fa-star" ></span>@endif
+                                                                        @if($rs->rate>=5) <span class="fa fa-star" ></span>@endif
                                                                     </div>
-                                                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+                                                                    <strong>{{$rs->subject}}</strong>
+                                                                    <p>{{$rs->reviews}}</p>
                                                                 </div>
                                                             </div>
                                                         </li>
-                                                        <li>
-                                                            <div class="media">
-                                                                <div class="media-left">
-                                                                    <a href="#">
-                                                                        <img class="media-object" src="img/testimonial-img-3.jpg" alt="girl image">
-                                                                    </a>
-                                                                </div>
-                                                                <div class="media-body">
-                                                                    <h4 class="media-heading"><strong>Marla Jobs</strong> - <span>March 26, 2016</span></h4>
-                                                                    <div class="aa-product-rating">
-                                                                        <span class="fa fa-star"></span>
-                                                                        <span class="fa fa-star"></span>
-                                                                        <span class="fa fa-star"></span>
-                                                                        <span class="fa fa-star"></span>
-                                                                        <span class="fa fa-star-o"></span>
-                                                                    </div>
-                                                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
-                                                                </div>
-                                                            </div>
-                                                        </li>
+                                                       @endforeach
                                                     </ul>
                                                     <h4>Add a review</h4>
-                                                    <div class="aa-your-rating">
-                                                        <p>Your Rating</p>
-                                                        <a href="#"><span class="fa fa-star-o"></span></a>
-                                                        <a href="#"><span class="fa fa-star-o"></span></a>
-                                                        <a href="#"><span class="fa fa-star-o"></span></a>
-                                                        <a href="#"><span class="fa fa-star-o"></span></a>
-                                                        <a href="#"><span class="fa fa-star-o"></span></a>
-                                                    </div>
-                                                    <!-- review form -->
-                                                    <form action="" class="aa-review-form">
-                                                        <div class="form-group">
-                                                            <label for="message">Your Review</label>
-                                                            <textarea class="form-control" rows="3" id="message"></textarea>
-                                                        </div>
-                                                        <div class="form-group">
-                                                            <label for="name">Name</label>
-                                                            <input type="text" class="form-control" id="name" placeholder="Name">
-                                                        </div>
-                                                        <div class="form-group">
-                                                            <label for="email">Email</label>
-                                                            <input type="email" class="form-control" id="email" placeholder="example@gmail.com">
-                                                        </div>
+                                                    @livewire('review',['id'=>$data->id])
 
-                                                        <button type="submit" class="btn btn-default aa-review-submit">Submit</button>
-                                                    </form>
                                                 </div>
                                             </div>
                                         </div>

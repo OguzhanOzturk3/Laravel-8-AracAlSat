@@ -6,6 +6,7 @@ use App\Models\Car;
 use App\Models\Category;
 use App\Models\Image;
 use App\Models\Message;
+use App\Models\Review;
 use App\Models\Setting;
 use Hamcrest\Core\Set;
 use Illuminate\Http\Request;
@@ -23,6 +24,17 @@ class HomeController extends Controller
     {
 
         return Setting::first();
+    }
+
+    public static function countreview($id)
+    {
+
+        return Review::where('car_id',$id)->count();
+    }
+    public static function avrgreview($id)
+    {
+
+        return Review::where('car_id',$id)->average('rate');
     }
 
     public function index()
@@ -54,9 +66,10 @@ class HomeController extends Controller
     {
         $data = Car::find($id);
         $datalist = Image::where('car_id',$id)->get();
+        $reviews = Review::where('car_id',$id)->get(); #burada review'i import ettiğim yerde hata olabilir
         #print_r($data);
         #exit();
-        return view('home.car_detail',['data'=>$data,'datalist'=>$datalist]);
+        return view('home.car_detail',['data'=>$data,'datalist'=>$datalist,'reviews'=>$reviews]);
     }
 
     public function getcar(Request $request)

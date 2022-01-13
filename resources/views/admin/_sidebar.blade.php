@@ -24,6 +24,10 @@
                         <i class="fas fa-table"></i>Contact Message</a>
                 </li>
 
+                <li>
+                    <a href="{{route('admin_review')}}">
+                        <i class="fas fa-table"></i>Reviews</a>
+                </li>
 
 
                 <li class="has-sub">

@@ -50,6 +50,18 @@
                                                     <figcaption>
                                                         <h4 class="aa-product-title"><a href="#">{{$rs->title}}</a></h4>
                                                         <span class="aa-product-price">{{$rs->price}}$</span><span class="aa-product-price"><del>{{$rs->price * 1.2}}$</del></span>
+                                                        @php
+                                                            $avgrev = \App\Http\Controllers\HomeController::avrgreview($rs->id);
+                                                            $countreview = \App\Http\Controllers\HomeController::countreview($rs->id);
+                                                        @endphp
+                                                        <div class="aa-product-rating">
+                                                            @if($avgrev>=1) <span class="fa fa-star" ></span>@endif
+                                                            @if($avgrev>=2) <span class="fa fa-star" ></span>@endif
+                                                            @if($avgrev>=3) <span class="fa fa-star" ></span>@endif
+                                                            @if($avgrev>=4) <span class="fa fa-star" ></span>@endif
+                                                            @if($avgrev>=5) <span class="fa fa-star" ></span>@endif
+                                                            <span>({{$countreview}})</span>
+                                                        </div>
                                                     </figcaption>
                                                 </figure>
                                                 <div class="aa-product-hvr-content">
@@ -182,6 +194,18 @@
                                                 <figcaption>
                                                     <h4 class="aa-product-title"><a href="#">{{$rs->title}}</a></h4>
                                                     <span class="aa-product-price">{{$rs->price}}$</span><span class="aa-product-price"><del>{{$rs->price * 1.2}}$</del></span>
+                                                    @php
+                                                        $avgrev = \App\Http\Controllers\HomeController::avrgreview($rs->id);
+                                                        $countreview = \App\Http\Controllers\HomeController::countreview($rs->id);
+                                                    @endphp
+                                                    <div class="aa-product-rating">
+                                                        @if($avgrev>=1) <span class="fa fa-star" ></span>@endif
+                                                        @if($avgrev>=2) <span class="fa fa-star" ></span>@endif
+                                                        @if($avgrev>=3) <span class="fa fa-star" ></span>@endif
+                                                        @if($avgrev>=4) <span class="fa fa-star" ></span>@endif
+                                                        @if($avgrev>=5) <span class="fa fa-star" ></span>@endif
+                                                        <span>({{$countreview}})</span>
+                                                    </div>
                                                 </figcaption>
                                             </figure>
                                             <div class="aa-product-hvr-content">
@@ -212,6 +236,19 @@
                                                 <figcaption>
                                                     <h4 class="aa-product-title"><a href="#">{{$rs->title}}</a></h4>
                                                     <span class="aa-product-price">{{$rs->price}}$</span>
+                                                    @php
+                                                        $avgrev = \App\Http\Controllers\HomeController::avrgreview($rs->id);
+                                                        $countreview = \App\Http\Controllers\HomeController::countreview($rs->id);
+                                                    @endphp
+                                                    <div class="aa-product-rating">
+
+                                                        @if($avgrev>=1) <span class="fa fa-star" ></span>@endif
+                                                        @if($avgrev>=2) <span class="fa fa-star" ></span>@endif
+                                                        @if($avgrev>=3) <span class="fa fa-star" ></span>@endif
+                                                        @if($avgrev>=4) <span class="fa fa-star" ></span>@endif
+                                                        @if($avgrev>=5) <span class="fa fa-star" ></span>@endif
+                                                        <span>({{$countreview}})</span>
+                                                    </div>
                                                 </figcaption>
                                             </figure>
                                             <div class="aa-product-hvr-content">
