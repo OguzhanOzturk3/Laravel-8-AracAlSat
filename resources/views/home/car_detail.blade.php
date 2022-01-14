@@ -138,7 +138,7 @@
                                                                         @if($rs->rate>=5) <span class="fa fa-star" ></span>@endif
                                                                     </div>
                                                                     <strong>{{$rs->subject}}</strong>
-                                                                    <p>{{$rs->reviews}}</p>
+                                                                    <p>{{$rs->review}}</p>
                                                                 </div>
                                                             </div>
                                                         </li>

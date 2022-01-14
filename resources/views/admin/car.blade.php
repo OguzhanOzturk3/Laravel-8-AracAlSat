@@ -36,7 +36,6 @@
                                                     <th>Image</th>
                                                     <th class="col-1">Image Gallery</th>
                                                     <th>Price</th>
-                                                    <th>Make</th>
                                                     <th>Action</th>
 
                                                 </tr>
@@ -62,8 +61,7 @@
                                                                 <img src="{{asset('assets\admin\images')}}/gallery.png" width="50" height="50">
                                                             </a>
                                                         </td>
-                                                        <td>{{$rs->price}}</td>
-                                                        <td>{{$rs->make}}</td>
+                                                        <td>{{$rs->price}}$</td>
                                                         <td><a href = "{{route('admin_car_edit',['id' => $rs->id])}}"><img src="{{asset('assets\admin\images')}}/edit.png" width="35" height="35"></a>
                                                             <a href = "{{route('admin_car_delete',['id' => $rs->id])}}" onclick = "return confirm('Delete ! are you sure?')"><img src="{{asset('assets\admin\images')}}/delete.png" width="35" height="35"></a>
                                                         </td>
