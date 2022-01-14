@@ -138,7 +138,7 @@
                                     <div class="image">
                                         <a href="#">
                                             <img src="{{asset('assets')}}/admin/images/icon/avatar-01.jpg" alt="John Doe" />
-                                        </a>
+                                        </a>profile_photo_path
                                     </div>
                                     <div class="content">
                                         <h5 class="name">

@@ -28,6 +28,10 @@
                     <a href="{{route('admin_review')}}">
                         <i class="fas fa-table"></i>Reviews</a>
                 </li>
+                <li>
+                    <a href="{{route('admin_faq')}}">
+                        <i class="fas fa-table"></i>FAQ</a>
+                </li>
 
 
                 <li class="has-sub">
