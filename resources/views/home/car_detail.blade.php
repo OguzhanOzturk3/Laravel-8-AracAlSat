@@ -69,6 +69,9 @@
                                             <div class="col-md-7 col-sm-7 col-xs-12">
                                                 <div class="aa-product-view-content">
                                                     <h3>{{$data->title}}</h3>
+                                                    <h3>{{$data->username}}</h3>
+                                                    <h3>{{$data->email}}</h3>
+                                                    <h3>{{$data->phone}}</h3>
                                                     <div class="aa-price-block">
                                                         <span class="aa-product-price">{{$data->price}}$     </span><span class="aa-product-price"><del>{{$data->price * 1.2}}$</del></span>
                                                         <p class="aa-product-avilability">Avilability: <span>In stock</span></p>

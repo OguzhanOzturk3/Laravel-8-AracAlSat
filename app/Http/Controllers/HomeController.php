@@ -32,6 +32,12 @@ class HomeController extends Controller
 
         return Review::where('car_id',$id)->count();
     }
+
+
+
+
+
+
     public static function avrgreview($id)
     {
 

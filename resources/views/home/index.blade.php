@@ -43,6 +43,7 @@
                                         <ul class="aa-product-catg">
                                             @foreach($daily as $rs)
                                             <!-- start single product item -->
+
                                             <li>
                                                 <figure>
                                                     <a class="aa-product-img" href="#"><img src="{{\Illuminate\Support\Facades\Storage::url($rs->image)}}" alt="polo shirt img" width="250" height="250"></a>
@@ -72,6 +73,7 @@
                                                 <!-- product badge -->
                                                 <span class="aa-badge aa-sale" href="#">SALE!</span>
                                             </li>
+
                                             <!-- start single product item -->
                                                 @endforeach
                                         </ul>

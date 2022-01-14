@@ -56,7 +56,7 @@
                                                         </div>
 
                                                     </div>
-                                                    <div class="row form-group">
+                                                   <div class="row form-group">
                                                         <div class="col col-md-3">
                                                             <label>Keywords</label>
                                                         </div>

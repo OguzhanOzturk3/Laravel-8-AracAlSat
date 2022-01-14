@@ -69,6 +69,7 @@
                                             </thead>
                                             <tbody>
                                             @foreach($datalist as $rs)
+{{--                                                @if($rs->status=='True')--}}
                                                 <p></p>
 
                                                 <tr>
@@ -94,6 +95,7 @@
                                                     </td>
 
                                                 </tr>
+{{--                                                @endif--}}
                                             @endforeach
 
                                             </tbody>
