@@ -1,6 +1,6 @@
 @extends('layouts.admin')
 
-@section('title', 'Review List')
+@section('title', 'Car List')
 @include('admin._header')
 @include('admin._sidebar')
 @include('admin._headerDesktop')
@@ -21,22 +21,18 @@
 
                                 <div class="card-body">
                                     <div class="col-lg-12">
-                                        <a class="col-12">@include('home.message')</a>
-                                        <div>
-                                            <br>
-                                        </div>
+
                                         <div class="table-responsive table--no-card m-b-30">
-                                            <table class="table table-bordered table-striped ">
+                                            <table class="col-md-4   table table-borderless table-striped ">
                                                 <thead>
                                                 <tr>
                                                     <th>ID</th>
+                                                    <th></th>
                                                     <th>Name</th>
-                                                    <th>Car</th>
-                                                    <th>Subject</th>
-                                                    <th>Review</th>
-                                                    <th >Rate</th>
-                                                    <th>Status</th>
-                                                    <th>Date</th>
+                                                    <th>Email</th>
+                                                    <th>Phone</th>
+                                                    <th>Address</th>
+                                                    <th>Roles</th>
                                                     <th>Action</th>
 
                                                 </tr>
@@ -47,30 +43,23 @@
 
                                                     <tr>
                                                         <td>{{$rs->id}}</td>
-
                                                         <td>
-                                                            <a href="{{route('admin_user_show',['id' => $rs->user->id])}}" onclick="return !window.open(this.href, '','top=50 left=100 width=1100, height=700')">
-                                                            {{$rs->user->name}}
+                                                            @if ($rs->profile_photo_path)
+                                                                <img src="{{\Illuminate\Support\Facades\Storage::url($rs->profile_photo_path)}}" width="50" height="50" alt="">
+                                                            @endif
+                                                        </td>
+                                                        <td >{{$rs->name}}</td>
+                                                        <td>{{$rs->email}}</td>
+                                                        <td>{{$rs->phone}}</td>
+                                                        <td>{{$rs->address}}</td>
+                                                        <td>@foreach($rs->roles as $row)
+                                                        {{$row->name}},
+                                                            @endforeach
+                                                            <a href ="{{route('admin_user_roles',['id'=>$rs->id])}}" onclick="return !window.open(this.href,'','top=50 left=100 width=800, heigth=600')">
+                                                                <i class=" fas fa-plus-circle"></i>
                                                             </a>
                                                         </td>
-
-
-                                                        <td><a href="{{route('car',['id'=>$rs->car->id])}}" target="_blank">
-                                                                {{$rs->car->title}}
-                                                            </a></td>
-                                                        <td>{{$rs->subject}}</td>
-                                                        <td>{{$rs->review}}</td>
-                                                        <td>{{$rs->rate}}</td>
-                                                        <td>{{$rs->status}}</td>
-                                                        <td>{{$rs->created_at}}</td>
-                                                        <td >
-                                                            <a href="{{route('admin_review_show',['id' => $rs->id])}}" onclick="return !window.open(this.href, '','top=50 left=100 width=1100, height=700')">
-                                                                <img src="{{asset('assets\admin\images')}}/edit.png" width="25" height="25">
-                                                            </a>
-                                                            <a href = "{{route('admin_review_delete',['id' => $rs->id])}}" onclick = "return confirm('Delete ! are you sure?')"><img src="{{asset('assets\admin\images')}}/delete.png" width="25" height="25"></a>
-
-                                                        </td>
-
+                                                        <td><a href ="{{route('admin_user_edit',['id' => $rs->id])}}"><img src="{{asset('assets\admin\images')}}/edit.png" width="35" height="35"></a>
 
                                                         </td>
 

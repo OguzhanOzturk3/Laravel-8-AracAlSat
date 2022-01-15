@@ -32,6 +32,10 @@
                     <a href="{{route('admin_faq')}}">
                         <i class="fas fa-table"></i>FAQ</a>
                 </li>
+                <li>
+                    <a href="{{route('admin_users')}}">
+                        <i class="fas fa-table"></i>Admin User</a>
+                </li>
 
 
                 <li class="has-sub">
