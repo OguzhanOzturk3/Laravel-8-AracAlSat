@@ -114,7 +114,7 @@
                                             <label>Price</label>
                                         </div>
                                         <div class="col-12 col-md-9">
-                                            <input type="number" id="text-input" value="0" name="price"  value="{{$data->price}}"  placeholder="Text" class="form-control">
+                                            <input type="number" id="text-input" name="price"  value="{{$data->price}}"  placeholder="Text" class="form-control">
 
                                         </div>
 

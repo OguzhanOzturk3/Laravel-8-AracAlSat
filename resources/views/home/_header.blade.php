@@ -58,7 +58,9 @@ $setting = \App\Http\Controllers\HomeController::getsetting()
                                 @auth()
 
                                 <li> <a href="{{route('myprofile')}}">{{\Illuminate\Support\Facades\Auth::user()->name}}</a></li>
+                                    <li> <a href="{{route('myprofile')}}">{{\Illuminate\Support\Facades\Auth::user()->roles->pluck('name')}}</a></li>
                                 <li class="hidden-xs"><a href="{{route('myprofile')}}">My Account</a></li>
+
                                 <li class="hidden-xs"><a href="{{route('logout')}}">Logout</a></li>
                                 @endauth
                                  @guest()
