@@ -383,8 +383,9 @@
                                                         </div>
                                                         <div class="col-12 col-md-9">
                                                             <select name="status" id="select" class="form-control">
-                                                                <option selected = "selected">False</option>
-                                                                <option>True</option>
+                                                                <option selected = "selected">Waiting</option>
+                                                                <option>Denied</option>
+                                                                <option>Accepted</option>
                                                             </select>
                                                         </div>
                                                     </div>

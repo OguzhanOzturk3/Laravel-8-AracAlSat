@@ -46,10 +46,10 @@
 
                                             <li>
                                                 <figure>
-                                                    <a class="aa-product-img" href="#"><img src="{{\Illuminate\Support\Facades\Storage::url($rs->image)}}" alt="polo shirt img" width="250" height="250"></a>
-                                                    <a class="aa-add-card-btn"href="{{route('addtocart',['id' => $rs->id])}}"><span class="fa fa-shopping-cart"></span>Add To Cart</a>
+                                                    <a class="aa-product-img" href="{{route('car',['id' => $rs->id])}}  "><img src="{{\Illuminate\Support\Facades\Storage::url($rs->image)}}" alt="polo shirt img" width="250" height="250"></a>
+                                                    <a class="aa-add-card-btn"href="{{route('car',['id' => $rs->id])}}"><span class="fa fa-search"></span>Quick View</a>
                                                     <figcaption>
-                                                        <h4 class="aa-product-title"><a href="#">{{$rs->title}}</a></h4>
+                                                        <h4 class="aa-product-title"><a href="{{route('car',['id' => $rs->id])}}">{{$rs->title}}</a></h4>
                                                         <span class="aa-product-price">{{$rs->price}}$</span><span class="aa-product-price"><del>{{$rs->price * 1.2}}$</del></span>
                                                         @php
                                                             $avgrev = \App\Http\Controllers\HomeController::avrgreview($rs->id);
@@ -66,10 +66,7 @@
                                                     </figcaption>
                                                 </figure>
                                                 <div class="aa-product-hvr-content">
-                                                    <a href="#" data-toggle="tooltip" data-placement="top" title="Add to Wishlist"><span class="fa fa-heart-o"></span></a>
-                                                    <a href="#" data-toggle="tooltip" data-placement="top" title="Compare"><span class="fa fa-exchange"></span></a>
-                                                    <a href="{{route('car',['id' => $rs->id])}}" data-toggle2="tooltip" data-placement="top" title="Quick View" data-toggle="modal" "><span class="fa fa-search"></span></a>
-                                                </div>
+                                                    </div>
                                                 <!-- product badge -->
                                                 <span class="aa-badge aa-sale" href="#">SALE!</span>
                                             </li>
@@ -77,7 +74,7 @@
                                             <!-- start single product item -->
                                                 @endforeach
                                         </ul>
-                                        <a class="aa-browse-btn" href="#">Browse all Product <span class="fa fa-long-arrow-right"></span></a>
+
                                     </div>
                                     <!-- / Daily product category -->
                                 </div>
@@ -191,10 +188,10 @@
                                        @foreach($picked as $rs)
                                         <li>
                                             <figure>
-                                                <a class="aa-product-img" href="#"><img src="{{\Illuminate\Support\Facades\Storage::url($rs->image)}}" alt="polo shirt img" width="250" height="250"></a>
-                                                <a class="aa-add-card-btn"href="{{route('addtocart',['id' => $rs->id])}}"><span class="fa fa-shopping-cart"></span>Add To Cart</a>
+                                                <a class="aa-product-img" href="{{route('car',['id' => $rs->id])}}"><img src="{{\Illuminate\Support\Facades\Storage::url($rs->image)}}" alt="polo shirt img" width="250" height="250"></a>
+                                                <a class="aa-add-card-btn"href="{{route('car',['id' => $rs->id])}}"><span class="fa fa-search"></span>Quick View</a>
                                                 <figcaption>
-                                                    <h4 class="aa-product-title"><a href="#">{{$rs->title}}</a></h4>
+                                                    <h4 class="aa-product-title"><a href="{{route('car',['id' => $rs->id])}}">{{$rs->title}}</a></h4>
                                                     <span class="aa-product-price">{{$rs->price}}$</span><span class="aa-product-price"><del>{{$rs->price * 1.2}}$</del></span>
                                                     @php
                                                         $avgrev = \App\Http\Controllers\HomeController::avrgreview($rs->id);
@@ -211,17 +208,14 @@
                                                 </figcaption>
                                             </figure>
                                             <div class="aa-product-hvr-content">
-                                                <a href="#" data-toggle="tooltip" data-placement="top" title="Add to Wishlist"><span class="fa fa-heart-o"></span></a>
-                                                <a href="#" data-toggle="tooltip" data-placement="top" title="Compare"><span class="fa fa-exchange"></span></a>
-                                                <a href="{{route('car',['id' => $rs->id])}}" data-toggle2="tooltip" data-placement="top" title="Quick View" data-toggle="modal" ><span class="fa fa-search"></span></a>
-                                            </div>
+                                                 </div>
                                             <!-- product badge -->
-                                            <span class="aa-badge aa-sale" href="#">SALE!</span>
+                                            <span class="aa-badge aa-hot" href="#">HOT!</span>
                                         </li>
                                         @endforeach
 
                                     </ul>
-                                    <a class="aa-browse-btn" href="#">Browse all Product <span class="fa fa-long-arrow-right"></span></a>
+
                                 </div>
                                 <!-- / Picked For You product category -->
 
@@ -233,10 +227,10 @@
                                         <!-- start single product item -->
                                         <li>
                                             <figure>
-                                                <a class="aa-product-img" href="#"><img src="{{\Illuminate\Support\Facades\Storage::url($rs->image)}}" alt="polo shirt img width="250" height="250""></a>
-                                                <a class="aa-add-card-btn"href="{{route('addtocart',['id' => $rs->id])}}"><span class="fa fa-shopping-cart"></span>Add To Cart</a>
+                                                <a class="aa-product-img" href="{{route('car',['id' => $rs->id])}}"><img src="{{\Illuminate\Support\Facades\Storage::url($rs->image)}}" alt="polo shirt img width="250" height="250""></a>
+                                                <a class="aa-add-card-btn"href="{{route('car',['id' => $rs->id])}}"><span class="fa fa-search"></span>Quick View</a>
                                                 <figcaption>
-                                                    <h4 class="aa-product-title"><a href="#">{{$rs->title}}</a></h4>
+                                                    <h4 class="aa-product-title"><a href="{{route('car',['id' => $rs->id])}}">{{$rs->title}}</a></h4>
                                                     <span class="aa-product-price">{{$rs->price}}$</span>
                                                     @php
                                                         $avgrev = \App\Http\Controllers\HomeController::avrgreview($rs->id);
@@ -254,16 +248,13 @@
                                                 </figcaption>
                                             </figure>
                                             <div class="aa-product-hvr-content">
-                                                <a href="#" data-toggle="tooltip" data-placement="top" title="Add to Wishlist"><span class="fa fa-heart-o"></span></a>
-                                                <a href="#" data-toggle="tooltip" data-placement="top" title="Compare"><span class="fa fa-exchange"></span></a>
-                                                <a href="{{route('car',['id' => $rs->id])}}" data-toggle2="tooltip" data-placement="top" title="Quick View" data-toggle="modal" ><span class="fa fa-search"></span></a>
-                                            </div>
+                                               </div>
                                         </li>
                                         <!-- start single product item -->
                                         @endforeach
 
                                     </ul>
-                                    <a class="aa-browse-btn" href="#">Browse all Product <span class="fa fa-long-arrow-right"></span></a>
+
                                 </div>
                                 <!-- / latest product category -->
                             </div>

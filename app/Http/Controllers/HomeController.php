@@ -30,7 +30,10 @@ class HomeController extends Controller
     public static function countreview($id)
     {
 
-        return Review::where('car_id',$id)->count();
+        return Review::where([
+            ['car_id', $id],
+            ['status', '=', 'Accepted'],
+        ])->count();
     }
 
 
@@ -41,16 +44,19 @@ class HomeController extends Controller
     public static function avrgreview($id)
     {
 
-        return Review::where('car_id',$id)->average('rate');
+        return Review::where([
+            ['car_id', $id],
+            ['status', '=', 'Accepted'],
+        ])->average('rate');
     }
 
     public function index()
     {
         $setting = Setting::first();
-        $slider = Car::select('id','title','image','price')->limit(4)->get();
-        $daily = Car::select('id','title','image','price')->limit(8)->inRandomOrder()->get();
-        $last = Car::select('id','title','image','price')->limit(8)->orderByDesc('id')->get();
-        $picked = Car::select('id','title','image','price')->limit(8)->inRandomOrder()->get();
+        $slider = Car::select('id','title','image','price')->where('status','=','Accepted')->limit(4)->get();
+        $daily = Car::select('id','title','image','price')->where('status','=','Accepted')->limit(8)->inRandomOrder()->get();
+        $last = Car::select('id','title','image','price')->where('status','=','Accepted')->limit(8)->orderByDesc('id')->get();
+        $picked = Car::select('id','title','image','price')->where('status','=','Accepted')->limit(8)->inRandomOrder()->get();
       // print_r($picked);
       //exit();
         $data= [
@@ -73,7 +79,7 @@ class HomeController extends Controller
     {
         $data = Car::find($id);
         $datalist = Image::where('car_id',$id)->get();
-        $reviews = Review::where('car_id',$id)->get(); #burada review'i import ettiğim yerde hata olabilir
+        $reviews = Review::where('car_id',$id)->get();
         #print_r($data);
         #exit();
         return view('home.car_detail',['data'=>$data,'datalist'=>$datalist,'reviews'=>$reviews]);
@@ -114,7 +120,10 @@ class HomeController extends Controller
 
     public function categorycars($id)
     {
-        $datalist = Car::where('category_id',$id)->get();
+        $datalist = Car::where([
+            ['category_id', $id],
+            ['status', '=', 'Accepted'],
+        ])->get();
         $data = Category::find($id);
         return view('home.category_cars',['data'=>$data,'datalist'=>$datalist]);
 

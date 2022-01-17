@@ -11,16 +11,16 @@
                     <div class="col-md-4 col-sm-4 col-xs-12">
                         <div class="aa-support-single">
                             <span class="fa fa-truck"></span>
-                            <h4>FREE SHIPPING</h4>
-                            <P>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quam, nobis.</P>
+                            <h4>SEL ALL VEHICLE</h4>
+                            <P>You can sell all vehicles you have.</P>
                         </div>
                     </div>
                     <!-- single support -->
                     <div class="col-md-4 col-sm-4 col-xs-12">
                         <div class="aa-support-single">
                             <span class="fa fa-clock-o"></span>
-                            <h4>30 DAYS MONEY BACK</h4>
-                            <P>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quam, nobis.</P>
+                            <h4>ANY TIME, ANY WHERE</h4>
+                            <P>It doesn't matter where you are.</P>
                         </div>
                     </div>
                     <!-- single support -->
@@ -28,7 +28,7 @@
                         <div class="aa-support-single">
                             <span class="fa fa-phone"></span>
                             <h4>SUPPORT 24/7</h4>
-                            <P>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quam, nobis.</P>
+                            <P>You can reach our support 24/7 every day.</P>
                         </div>
                     </div>
                 </div>
@@ -54,20 +54,18 @@
                                     <ul class="aa-footer-nav">
                                         <li><a href="{{route('home')}}">Home</a></li>
                                         <li><a href="{{route('aboutus')}}">About Us</a></li>
-                                        <li><a href="{{route('aboutus')}}">Contact Us</a></li>
+                                        <li><a href="{{route('references')}}">References </a></li>
+                                        <li><a href="{{route('contact')}}">Contact Us</a></li>
+                                        <li><a href="{{route('faq')}}">FAQ </a></li>
                                     </ul>
                                 </div>
                             </div>
                             <div class="col-md-3 col-sm-6">
                                 <div class="aa-footer-widget">
                                     <div class="aa-footer-widget">
-                                        <h3>Knowledge Base</h3>
-                                        <ul class="aa-footer-nav">
-                                            <li><a href="#">Delivery</a></li>
-                                            <li><a href="#">Returns</a></li>
-                                            <li><a href="#">Services</a></li>
-                                            <li><a href="#">Discount</a></li>
-                                            <li><a href="#">Special Offer</a></li>
+                                        <form class="form-header" action="" method="POST">
+
+                                        </form>
                                         </ul>
                                     </div>
                                 </div>
@@ -75,13 +73,10 @@
                             <div class="col-md-3 col-sm-6">
                                 <div class="aa-footer-widget">
                                     <div class="aa-footer-widget">
-                                        <h3>Useful Links</h3>
-                                        <ul class="aa-footer-nav">
-                                            <li><a href="#">Site Map</a></li>
-                                            <li><a href="#">Search</a></li>
-                                            <li><a href="#">Advanced Search</a></li>
-                                            <li><a href="#">Suppliers</a></li>
-                                            <li><a href="#">FAQ</a></li>
+                                        <form class="form-header" action="" method="POST">
+
+                                        </form>
+
                                         </ul>
                                     </div>
                                 </div>

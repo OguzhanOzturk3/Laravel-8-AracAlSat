@@ -15,47 +15,64 @@
                     <a href="{{route('admin_category')}}">
                         <i class="fas fa-table"></i>Category</a>
                 </li>
-                <li>
-                    <a href="{{route('admin_car')}}">
-                        <i class="fas fa-table"></i>Car</a>
-                </li>
-                <li>
-                    <a href="{{route('admin_message')}}">
-                        <i class="fas fa-table"></i>Contact Message</a>
-                </li>
 
-                <li>
-                    <a href="{{route('admin_review')}}">
-                        <i class="fas fa-table"></i>Reviews</a>
-                </li>
-                <li>
-                    <a href="{{route('admin_faq')}}">
-                        <i class="fas fa-table"></i>FAQ</a>
-                </li>
-                <li>
-                    <a href="{{route('admin_users')}}">
-                        <i class="fas fa-table"></i>Admin User</a>
+                <li class="has-sub">
+                    <a class="js-arrow" href="#">
+                        <i class="fas fa-tachometer-alt"></i>Vehicles</a>
+                    <ul class="list-unstyled navbar__sub-list js-sub-list">
+                        <li>
+                            <a href="{{route('admin_car')}}">All Vehicles</a>
+                        </li>
+                        <li>
+                            <a href="{{route('admin_accepted_car')}}">Accepted Vehicles</a>
+                        </li>
+                        <li>
+                            <a href="{{route('admin_denied_car')}}">Denied and Waiting Vehicles</a>
+                        </li>
+                    </ul>
                 </li>
 
 
                 <li class="has-sub">
                     <a class="js-arrow" href="#">
-                        <i class="fas fa-copy"></i>Açılır Kutu Örnek</a>
+                        <i class="fas fa-envelope"></i>Messages</a>
                     <ul class="list-unstyled navbar__sub-list js-sub-list">
                         <li>
-                            <a href="login.html">Login</a>
+                            <a href="{{route('admin_message')}}">New Contact Messages</a>
                         </li>
                         <li>
-                            <a href="register.html">Register</a>
+                            <a href="{{route('admin_read_message')}}">Readed Contact Messages</a>
+                        </li>
+                    </ul>
+                </li>
+
+
+                <li class="has-sub">
+                    <a class="js-arrow" href="#">
+                        <i class="fas fa-star"></i>Reviews</a>
+                    <ul class="list-unstyled navbar__sub-list js-sub-list">
+                        <li>
+                            <a href="{{route('admin_review')}}">All Reviews</a>
                         </li>
                         <li>
-                            <a href="forget-pass.html">Forget Password</a>
+                            <a href="{{route('admin_accepted_review')}}">Accepted Reviews</a>
+                        </li>
+                        <li>
+                            <a href="{{route('admin_denied_review')}}">Denied and Waiting Reviews</a>
                         </li>
                     </ul>
                 </li>
                 <li>
+                    <a href="{{route('admin_faq')}}">
+                        <i class="fas fa-comments"></i>FAQ</a>
+                </li>
+                <li>
+                    <a href="{{route('admin_users')}}">
+                        <i class="fas fa-users"></i>Admin User</a>
+                </li>
+                <li>
                     <a class="js-arrow open" href="{{route('admin_setting')}}">
-                        <i class="fas fa-desktop"></i>Setting</a>
+                        <i class="fas fa-cog"></i>Setting</a>
                 </li>
             </ul>
         </nav>

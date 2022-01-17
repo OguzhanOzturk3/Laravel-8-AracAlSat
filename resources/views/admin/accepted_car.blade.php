@@ -1,6 +1,6 @@
 @extends('layouts.admin')
 
-@section('title', 'Car List')
+@section('title', 'Accepted Car List')
 @include('admin._header')
 @include('admin._sidebar')
 @include('admin._headerDesktop')
@@ -42,6 +42,7 @@
                                                 </thead>
                                                 <tbody>
                                                 @foreach($datalist as $rs)
+                                                    @if($rs->status=='Accepted')
                                                     <p></p>
 
                                                     <tr>
@@ -67,6 +68,7 @@
                                                         </td>
 
                                                     </tr>
+                                                    @endif
                                                 @endforeach
 
                                                 </tbody>

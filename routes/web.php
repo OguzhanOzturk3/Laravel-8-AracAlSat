@@ -63,6 +63,8 @@ Route::middleware('auth')->prefix('admin')->group(function (){
 #Car
     Route::prefix('car')->group(function(){
         Route::get('/',[\App\Http\Controllers\Admin\CarController::class, 'index'])->name('admin_car');
+        Route::get('accepted',[\App\Http\Controllers\Admin\CarController::class, 'accepted'])->name('admin_accepted_car');
+        Route::get('denied',[\App\Http\Controllers\Admin\CarController::class, 'denied'])->name('admin_denied_car');
         Route::get('create',[\App\Http\Controllers\Admin\CarController::class, 'create'])->name('admin_car_add');
         Route::post('store',[\App\Http\Controllers\Admin\CarController::class, 'store'])->name('admin_car_store');
         Route::get('edit/{id}',[\App\Http\Controllers\Admin\CarController::class, 'edit'])->name('admin_car_edit');
@@ -75,6 +77,7 @@ Route::middleware('auth')->prefix('admin')->group(function (){
     #Message
     Route::prefix('messages')->group(function(){
         Route::get('/',[MessageController::class, 'index'])->name('admin_message');
+        Route::get('read',[MessageController::class, 'read'])->name('admin_read_message');
         Route::get('edit/{id}',[MessageController::class, 'edit'])->name('admin_message_edit');
         Route::post('update/{id}',[MessageController::class, 'update'])->name('admin_message_update');
         Route::get('delete/{id}',[MessageController::class, 'destroy'])->name('admin_message_delete');
@@ -99,6 +102,8 @@ Route::middleware('auth')->prefix('admin')->group(function (){
     Route::prefix('review')->group(function(){
 
         Route::get('/',[\App\Http\Controllers\Admin\ReviewController::class, 'index'])->name('admin_review');
+        Route::get('accepted',[\App\Http\Controllers\Admin\ReviewController::class, 'accepted'])->name('admin_accepted_review');
+        Route::get('denied',[\App\Http\Controllers\Admin\ReviewController::class, 'denied'])->name('admin_denied_review');
         Route::post('update/{id}',[\App\Http\Controllers\Admin\ReviewController::class, 'update'])->name('admin_review_update');
         Route::get('delete/{id}',[\App\Http\Controllers\Admin\ReviewController::class, 'destroy'])->name('admin_review_delete');
         Route::get('show/{id}',[\App\Http\Controllers\Admin\ReviewController::class, 'show'])->name('admin_review_show');
@@ -146,6 +151,8 @@ Route::middleware('auth')->prefix('myaccount')->namespace('myaccount')->group(fu
 
     Route::get('/',[UserController::class, 'index'])->name('myprofile');
     Route::get('/myreviews',[UserController::class, 'myreviews'])->name('myreviews');
+    Route::get('/acceptedmyreviews',[UserController::class, 'acceptedmyreviews'])->name('acceptedmyreviews');
+    Route::get('/deniedmyreviews',[UserController::class, 'deniedmyreviews'])->name('deniedmyreviews');
     Route::get('/destroymyreview/{id}',[UserController::class, 'destroymyreview'])->name('user_review_delete');
 
 });
@@ -158,6 +165,8 @@ Route::middleware('auth')->prefix('user')->namespace('user')->group(function (){
     #Car
     Route::prefix('car')->group(function(){
         Route::get('/',[\App\Http\Controllers\CarController::class, 'index'])->name('user_car');
+        Route::get('accepted',[\App\Http\Controllers\CarController::class, 'accepted'])->name('user_accepted_car');
+        Route::get('denied',[\App\Http\Controllers\CarController::class, 'denied'])->name('user_denied_car');
         Route::get('create',[\App\Http\Controllers\CarController::class, 'create'])->name('user_car_add');
         Route::post('store',[\App\Http\Controllers\CarController::class, 'store'])->name('user_car_store');
         Route::get('edit/{id}',[\App\Http\Controllers\CarController::class, 'edit'])->name('user_car_edit');
@@ -170,10 +179,10 @@ Route::middleware('auth')->prefix('user')->namespace('user')->group(function (){
     #Car image
     Route::prefix('image')->group(function(){
 
-        Route::get('create/{car_id}',[\App\Http\Controllers\Admin\ImageController::class, 'create'])->name('user_image_add');
-        Route::post('store/{car_id}',[\App\Http\Controllers\Admin\ImageController::class, 'store'])->name('user_image_store');
-        Route::get('delete/{id}/{car_id}',[\App\Http\Controllers\Admin\ImageController::class, 'destroy'])->name('user_image_delete');
-        Route::get('show',[\App\Http\Controllers\Admin\ImageController::class, 'show'])->name('user_image_show');
+        Route::get('create/{car_id}',[\App\Http\Controllers\ImageController::class, 'create'])->name('user_image_add');
+        Route::post('store/{car_id}',[\App\Http\Controllers\ImageController::class, 'store'])->name('user_image_store');
+        Route::get('delete/{id}/{car_id}',[\App\Http\Controllers\ImageController::class, 'destroy'])->name('user_image_delete');
+        Route::get('show',[\App\Http\Controllers\ImageController::class, 'show'])->name('user_image_show');
 
     });
 

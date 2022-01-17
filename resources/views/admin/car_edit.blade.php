@@ -97,7 +97,7 @@
                                                             <label>Price</label>
                                                         </div>
                                                         <div class="col-12 col-md-9">
-                                                            <input type="number" id="text-input" value="0" name="price"  value="{{$data->price}}"  placeholder="Text" class="form-control">
+                                                            <input type="number" id="text-input"  name="price"  value="{{$data->price}}"  placeholder="Text" class="form-control">
 
                                                         </div>
 
@@ -111,43 +111,12 @@
 
                                                         </div>
 
-                                                    </div>
-{{--                                                    <div class="row form-group">--}}
-{{--                                                        <div class="col col-md-3">--}}
-{{--                                                            <label>Make</label>--}}
-{{--                                                        </div>--}}
-{{--                                                        <div class="col-12 col-md-9">--}}
-{{--                                                            <input type="text" id="text-input" name="make"  value="{{$data->make}}"  placeholder="Text" class="form-control">--}}
-
-{{--                                                        </div>--}}
-
-{{--                                                    </div>--}}
-{{--                                                    <div class="row form-group">--}}
-{{--                                                        <div class="col col-md-3">--}}
-{{--                                                            <label>Series</label>--}}
-{{--                                                        </div>--}}
-{{--                                                        <div class="col-12 col-md-9">--}}
-{{--                                                            <input type="text" id="text-input" name="series"  value="{{$data->series}}"  placeholder="Text" class="form-control">--}}
-
-{{--                                                        </div>--}}
-
-{{--                                                    </div>--}}
-{{--                                                    <div class="row form-group">--}}
-{{--                                                        <div class="col col-md-3">--}}
-{{--                                                            <label>Model</label>--}}
-{{--                                                        </div>--}}
-{{--                                                        <div class="col-12 col-md-9">--}}
-{{--                                                            <input type="text" id="text-input" name="model"  value="{{$data->model}}"  placeholder="Text" class="form-control">--}}
-
-{{--                                                        </div>--}}
-
-{{--                                                    </div>--}}
-                                                    <div class="row form-group">
+                                                    </div> <div class="row form-group">
                                                         <div class="col col-md-3">
                                                             <label>Year</label>
                                                         </div>
                                                         <div class="col-12 col-md-9">
-                                                            <input type="number" id="text-input" name="year" value="2020" placeholder="Text" class="form-control">
+                                                            <input type="number" id="text-input" name="year" value="{{$data->year}}" placeholder="Text" class="form-control">
 
                                                         </div>
 
@@ -185,7 +154,7 @@
                                                             <label>KM</label>
                                                         </div>
                                                         <div class="col-12 col-md-9">
-                                                            <input type="number" id="text-input" name="km" value="0" placeholder="Text" class="form-control">
+                                                            <input type="number" id="text-input" name="km" value="{{$data->km}}" placeholder="Text" class="form-control">
 
                                                         </div>
 
@@ -325,8 +294,8 @@
                                                         </div>
                                                         <div class="col-12 col-md-9">
                                                             <select name="plate" id="select" class="form-control">
-                                                                <option>{{$data->plate}}</option>
-                                                                <option selected = "selected">Turkey Plate</option>
+                                                                <option selected = "selected">{{$data->plate}}</option>
+                                                                <option>Turkey Plate</option>
                                                                 <option>Foreign Plate</option>
                                                                 <option>Blue Plate</option>
                                                             </select>
@@ -338,8 +307,8 @@
                                                         </div>
                                                         <div class="col-12 col-md-9">
                                                             <select name="from" id="select" class="form-control">
-                                                                <option>{{$data->from}}</option>
-                                                                <option selected = "selected">Owner</option>
+                                                                <option selected = "selected">{{$data->from}}</option>
+                                                                <option >Owner</option>
                                                                 <option>Gallery</option>
                                                             </select>
                                                         </div>
@@ -350,8 +319,8 @@
                                                         </div>
                                                         <div class="col-12 col-md-9">
                                                             <select name="facetime_show" id="select" class="form-control">
-                                                                <option >{{$data->facetime_show}}</option>
-                                                                <option selected = "selected">Yes</option>
+                                                                <option selected = "selected">{{$data->facetime_show}}</option>
+                                                                <option>Yes</option>
                                                                 <option>No</option>
                                                             </select>
                                                         </div>
@@ -362,8 +331,8 @@
                                                         </div>
                                                         <div class="col-12 col-md-9">
                                                             <select name="exchange" id="select" class="form-control">
-                                                                <option>{{$data->exchange}}</option>
-                                                                <option selected = "selected">Yes</option>
+                                                                <option selected = "selected">{{$data->exchange}}</option>
+                                                                <option >Yes</option>
                                                                 <option>No</option>
                                                             </select>
                                                         </div>
@@ -374,8 +343,8 @@
                                                         </div>
                                                         <div class="col-12 col-md-9">
                                                             <select name="condition" id="select" class="form-control">
-                                                                <option >{{$data->condition}}</option>
-                                                                <option selected = "selected">New</option>
+                                                                <option selected = "selected">{{$data->condition}}</option>
+                                                                <option >New</option>
                                                                 <option>Second Hand</option>
                                                             </select>
                                                         </div>
@@ -401,9 +370,10 @@
                                                         </div>
                                                         <div class="col-12 col-md-9">
                                                             <select name="status" id="select" class="form-control">
-
-                                                                <option >False</option>
-                                                                <option>True</option>
+                                                                <option selected = "selected">{{$data->status}}</option>
+                                                                <option >Waiting</option>
+                                                                <option>Denied</option>
+                                                                <option>Accepted</option>
                                                             </select>
                                                         </div>
                                                     </div>

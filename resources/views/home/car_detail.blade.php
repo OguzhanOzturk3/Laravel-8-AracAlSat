@@ -39,25 +39,28 @@
                                     <div class="aa-product-details-content">
                                         <div class="row">
                                             <!-- Modal view slider -->
+                                            <h2>{{$data->title}}</h2>
                                             <div class="col-md-5 col-sm-5 col-xs-12">
+
                                                 <div class="aa-product-view-slider">
+
                                                     <div id="demo-1" class="simpleLens-gallery-container">
 
                                                         <div class="simpleLens-container">
 
-                                                                <div class="simpleLens-big-image-container"><a data-lens-image="img/view-slider/large/polo-shirt-1.png" class="simpleLens-lens-image"><img src="{{\Illuminate\Support\Facades\Storage::url($data->image)}}" width="300" height="255" class="simpleLens-big-image"></a></div>
+                                                                <div class="simpleLens-big-image-container"><a data-lens-image="{{\Illuminate\Support\Facades\Storage::url($data->image)}}" class="simpleLens-lens-image"><img src="{{\Illuminate\Support\Facades\Storage::url($data->image)}}" width="300" height="255" class="simpleLens-big-image"></a></div>
 
                                                         </div>
 
                                                         <div class="simpleLens-thumbnails-container">
                                                             @foreach($datalist as $rs)
-                                                            <a data-big-image="{{\Illuminate\Support\Facades\Storage::url($rs->image)}}" width="300" height="255" data-lens-image="{{\Illuminate\Support\Facades\Storage::url($rs->image)}} " class="simpleLens-thumbnail-wrapper" href="#">
-                                                                <img src="{{\Illuminate\Support\Facades\Storage::url($rs->image)}}" width="50" height="50">
+                                                            <a data-big-image="{{\Illuminate\Support\Facades\Storage::url($rs->image)}}" width="300" height="255" data-lens-image="{{\Illuminate\Support\Facades\Storage::url($rs->image)}} " class="simpleLens-thumbnail-wrapper" >
+                                                                <img src="{{\Illuminate\Support\Facades\Storage::url($rs->image)}}" width="75" height="75">
                                                             </a>
                                                             @endforeach
 
-                                                            <a data-big-image="{{\Illuminate\Support\Facades\Storage::url($data->image)}}"width="300" height="255"  data-lens-image="{{\Illuminate\Support\Facades\Storage::url($data->image)}}" class="simpleLens-thumbnail-wrapper" href="#">
-                                                                <img src="{{\Illuminate\Support\Facades\Storage::url($data->image)}}" width="50" height="50">
+                                                            <a data-big-image="{{\Illuminate\Support\Facades\Storage::url($data->image)}}"width="300" height="255"  data-lens-image="{{\Illuminate\Support\Facades\Storage::url($data->image)}}" class="simpleLens-thumbnail-wrapper" >
+                                                                <img src="{{\Illuminate\Support\Facades\Storage::url($data->image)}}" width="75" height="75">
                                                             </a>
 
 
@@ -68,13 +71,31 @@
                                             <!-- Modal view content -->
                                             <div class="col-md-7 col-sm-7 col-xs-12">
                                                 <div class="aa-product-view-content">
-                                                    <h3>{{$data->title}}</h3>
-                                                    <h3>{{$data->username}}</h3>
-                                                    <h3>{{$data->email}}</h3>
-                                                    <h3>{{$data->phone}}</h3>
+                                                    <span class="aa-product-price">Price: {{$data->price}}$     </span><span class="aa-product-price"><del>{{$data->price * 1.2}}$</del></span>
+                                                    <h1>Sellers Information:</h1>
+                                                    <h4>Name: {{$data->username}}</h4>
+                                                    <h4>E-Mail: {{$data->email}}</h4>
+                                                    <h4>Phone: {{$data->phone}}</h4>
+                                                    <h4>Address: {{$data->adress}}</h4>
+                                                    <hr>
+                                                    <h4>Year: {{$data->year}}</h4>
+                                                    <h4>Fuel: {{$data->fuel}}</h4>
+                                                    <h4>Gear: {{$data->gear}}</h4>
+                                                    <h4>Km: {{$data->km}}</h4>
+                                                    <h4>Body Type: {{$data->body_type}}</h4>
+                                                    <h4>Engine Power: {{$data->engine_power}}</h4>
+                                                    <h4>Engine Capacity: {{$data->engine_capacity}}</h4>
+                                                    <h4>Wheel Drive: {{$data->wheel_drive}}</h4>
+                                                    <h4>Color: {{$data->color}}</h4>
+                                                    <h4>Warranty: {{$data->warranty}}</h4>
+                                                    <h4>Plate: {{$data->plate}}</h4>
+                                                    <h4>From: {{$data->from}}</h4>
+                                                    <h4>Facetime Show: {{$data->facetime_show}}</h4>
+                                                    <h4>Exchangeable: {{$data->exchange}}</h4>
+                                                    <h4>Condition: {{$data->condition}}</h4>
+                                                    <hr>
                                                     <div class="aa-price-block">
-                                                        <span class="aa-product-price">{{$data->price}}$     </span><span class="aa-product-price"><del>{{$data->price * 1.2}}$</del></span>
-                                                        <p class="aa-product-avilability">Avilability: <span>In stock</span></p>
+
                                                     </div>
                                                     <p>{{$data->description}}</p>
                                                     @php
@@ -94,27 +115,13 @@
                                                     </div>
                                                     <a >{{$countreview}} Reviews(s) {{$avgrev}} /Add Review</a>
 
-                                                    <h4>Color</h4>
-                                                    <div class="aa-color-tag">
-                                                        <a href="#" class="aa-color-green"></a>
-                                                        <a href="#" class="aa-color-yellow"></a>
-                                                        <a href="#" class="aa-color-pink"></a>
-                                                        <a href="#" class="aa-color-black"></a>
-                                                        <a href="#" class="aa-color-white"></a>
-                                                    </div>
-
-                                                    <div class="aa-prod-view-bottom">
-                                                        <a class="aa-add-to-cart-btn" href="{{route('addtocart',['id' => $data->id])}}">Add To Cart</a>
-                                                        <a class="aa-add-to-cart-btn" href="#">Wishlist</a>
-                                                        <a class="aa-add-to-cart-btn" href="#">Compare</a>
-                                                    </div>
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
                                     <div class="aa-product-details-bottom">
                                         <ul class="nav nav-tabs" id="myTab2">
-                                            <li><a href="#description" data-toggle="tab">Description</a></li>
+                                            <li><a href="#description" data-toggle="tab">Ad Detail</a></li>
                                             <li><a href="#review" data-toggle="tab">Reviews</a></li>
                                         </ul>
 
@@ -129,6 +136,7 @@
                                                     <h4>{{$countreview}} Reviews </h4>
                                                     <ul class="aa-review-nav">
                                                         @foreach($reviews as $rs)
+                                                            @if($rs->status=='Accepted')
                                                         <li>
                                                             <div class="media">
                                                                 <div class="media-body">
@@ -145,6 +153,7 @@
                                                                 </div>
                                                             </div>
                                                         </li>
+                                                            @endif
                                                        @endforeach
                                                     </ul>
                                                     <h4>Add a review</h4>

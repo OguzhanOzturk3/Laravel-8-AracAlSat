@@ -77,10 +77,10 @@
                         <!-- start single product item -->
                         <li>
                             <figure>
-                                <a class="aa-product-img" href="#"><img src="{{\Illuminate\Support\Facades\Storage::url($rs->image)}}" alt="polo shirt img" width="250" height="255"></a>
-                                <a class="aa-add-card-btn"href="#"><span class="fa fa-shopping-cart"></span>Add To Cart</a>
+                                <a class="aa-product-img" href="{{route('car',['id' => $rs->id])}}"><img src="{{\Illuminate\Support\Facades\Storage::url($rs->image)}}" alt="polo shirt img" width="250" height="255"></a>
+                                <a class="aa-add-card-btn"href="{{route('car',['id' => $rs->id])}}"><span class="fa fa-search"></span>Quick View</a>
                                 <figcaption>
-                                    <a href="#">{{$rs->title}}</a><br>
+                                    <a href="{{route('car',['id' => $rs->id])}}">{{$rs->title}}</a><br>
                                     <a class="aa-product-price">{{$rs->price}}$</a>
                                     @php
                                         $avgrev = \App\Http\Controllers\HomeController::avrgreview($rs->id);
@@ -96,10 +96,7 @@
                                 </figcaption>
                             </figure>
                             <div class="aa-product-hvr-content">
-                                <a href="#" data-toggle="tooltip" data-placement="top" title="Add to Wishlist"><span class="fa fa-heart-o"></span></a>
-                                <a href="#" data-toggle="tooltip" data-placement="top" title="Compare"><span class="fa fa-exchange"></span></a>
-                                <a href="{{route('car',['id' => $rs->id])}}" data-toggle2="tooltip" data-placement="top" title="Quick View" data-toggle="modal" ><span class="fa fa-search"></span></a>
-                            </div>
+                               </div>
                         </li>
                             <!-- end single product item -->
                             @endforeach

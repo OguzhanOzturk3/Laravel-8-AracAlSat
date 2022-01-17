@@ -23,7 +23,7 @@
                                     <div class="col-lg-12">
 
                                         <div class="table-responsive table--no-card m-b-30">
-                                            <table class="col-md-4   table table-borderless table-striped ">
+                                            <table class="table table-bordered table-striped ">
                                                 <thead>
                                                 <tr>
                                                     <th>ID</th>

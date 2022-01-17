@@ -16,7 +16,7 @@
 
                             <div class="card">
                                 <div class="card-header">
-                                    <strong class="card-title">Car</strong>
+                                    <strong class="card-title"></strong>
                                 </div>
 
                                 <div class="card-body">

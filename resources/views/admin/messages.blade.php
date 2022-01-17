@@ -16,7 +16,7 @@
 
                             <div class="card">
                                 <div class="card-header">
-                                    <strong class="card-title">Car</strong>
+                                    <strong class="card-title"></strong>
                                 </div>
 
                                 <div class="card-body">
@@ -26,7 +26,7 @@
                                             <br>
                                         </div>
                                         <div class="table-responsive table--no-card m-b-30">
-                                            <table class="table table-borderless table-striped ">
+                                            <table class="table table-bordered table-striped ">
                                                 <thead>
                                                 <tr>
                                                     <th>ID</th>
@@ -44,6 +44,7 @@
                                                 </thead>
                                                 <tbody>
                                                 @foreach($datalist as $rs)
+                                                    @if($rs->status=='New')
                                                     <p></p>
 
                                                     <tr>
@@ -53,8 +54,8 @@
                                                         <td>{{$rs->email}}</td>
                                                         <td>{{$rs->phone}}</td>
                                                         <td>{{$rs->ipaddress}}</td>
-                                                        <td>{{$rs->subject}}</td>
-                                                        <td>{{$rs->message}}</td>
+                                                        <td >{{$rs->subject}}</td>
+                                                        <td >{{$rs->message}}</td>
                                                         <td>{{$rs->note}}</td>
                                                         <td>{{$rs->status}}</td>
 
@@ -71,6 +72,7 @@
                                                         </td>
 
                                                     </tr>
+                                                    @endif
                                                 @endforeach
 
                                                 </tbody>

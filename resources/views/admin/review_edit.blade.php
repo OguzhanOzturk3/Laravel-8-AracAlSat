@@ -116,8 +116,8 @@
                                                                 <td>
                                                                     <select name="status">
                                                                         <option selected>{{$data->status}}</option>
-                                                                        <option>True</option>
-                                                                        <option>False</option>
+                                                                        <option>Denied</option>
+                                                                        <option>Accepted</option>
                                                                     </select>
 
                                                                 </td>

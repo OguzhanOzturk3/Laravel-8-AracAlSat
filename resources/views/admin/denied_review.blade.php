@@ -1,6 +1,6 @@
 @extends('layouts.admin')
 
-@section('title', 'Car List')
+@section('title', 'Denied and Waiting Review List')
 @include('admin._header')
 @include('admin._sidebar')
 @include('admin._headerDesktop')
@@ -16,12 +16,12 @@
 
                             <div class="card">
                                 <div class="card-header">
-                                    <strong class="card-title">Car</strong>
+                                    <strong class="card-title"></strong>
                                 </div>
 
                                 <div class="card-body">
                                     <div class="col-lg-12">
-                                        <a href ="{{route('admin_car_add')}}" type="button" class="btn btn-success">Add Car</a>
+                                        <a class="col-12">@include('home.message')</a>
                                         <div>
                                             <br>
                                         </div>
@@ -30,43 +30,54 @@
                                                 <thead>
                                                 <tr>
                                                     <th>ID</th>
-                                                    <th>Category</th>
-                                                    <th>Title(s)</th>
+                                                    <th>Name</th>
+                                                    <th>Car</th>
+                                                    <th>Subject</th>
+                                                    <th>Review</th>
+                                                    <th >Rate</th>
                                                     <th>Status</th>
-                                                    <th>Image</th>
-                                                    <th>Image Gallery</th>
-                                                    <th>Price</th>
+                                                    <th>Date</th>
                                                     <th>Action</th>
 
                                                 </tr>
                                                 </thead>
                                                 <tbody>
+
                                                 @foreach($datalist as $rs)
+                                                    @if($rs->status!='Accepted')
                                                     <p></p>
 
                                                     <tr>
                                                         <td>{{$rs->id}}</td>
+
                                                         <td>
-                                                            {{ \App\Http\Controllers\Admin\CategoryController::getParentsTree($rs->category,$rs->category->title) }}
-                                                        </td>
-                                                        <td >{{$rs->title}}</td>
-                                                        <td>{{$rs->status}}</td>
-                                                        <td>
-                                                            @if ($rs->image)
-                                                            <img src="{{\Illuminate\Support\Facades\Storage::url($rs->image)}}" width="50" height="50" alt="">
-                                                            @endif
-                                                        </td>
-                                                        <td >
-                                                            <a href="{{route('admin_image_add',['car_id' => $rs->id])}}" onclick="return !window.open(this.href, '','top=50 left=100 width=1100, height=700')">
-                                                                <img src="{{asset('assets\admin\images')}}/gallery.png" width="50" height="50">
+                                                            <a href="{{route('admin_user_show',['id' => $rs->user->id])}}" onclick="return !window.open(this.href, '','top=50 left=100 width=1100, height=700')">
+                                                            {{$rs->user->name}}
                                                             </a>
                                                         </td>
-                                                        <td>{{$rs->price}}$</td>
-                                                        <td><a href = "{{route('admin_car_edit',['id' => $rs->id])}}"><img src="{{asset('assets\admin\images')}}/edit.png" width="35" height="35"></a>
-                                                            <a href = "{{route('admin_car_delete',['id' => $rs->id])}}" onclick = "return confirm('Delete ! are you sure?')"><img src="{{asset('assets\admin\images')}}/delete.png" width="35" height="35"></a>
+
+
+                                                        <td><a href="{{route('car',['id'=>$rs->car->id])}}" target="_blank">
+                                                                {{$rs->car->title}}
+                                                            </a></td>
+                                                        <td>{{$rs->subject}}</td>
+                                                        <td>{{$rs->review}}</td>
+                                                        <td>{{$rs->rate}}</td>
+                                                        <td>{{$rs->status}}</td>
+                                                        <td>{{$rs->created_at}}</td>
+                                                        <td >
+                                                            <a href="{{route('admin_review_show',['id' => $rs->id])}}" onclick="return !window.open(this.href, '','top=50 left=100 width=1100, height=700')">
+                                                                <img src="{{asset('assets\admin\images')}}/edit.png" width="25" height="25">
+                                                            </a>
+                                                            <a href = "{{route('admin_review_delete',['id' => $rs->id])}}" onclick = "return confirm('Delete ! are you sure?')"><img src="{{asset('assets\admin\images')}}/delete.png" width="25" height="25"></a>
+
+                                                        </td>
+
+
                                                         </td>
 
                                                     </tr>
+                                                    @endif
                                                 @endforeach
 
                                                 </tbody>

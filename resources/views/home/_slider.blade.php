@@ -16,7 +16,7 @@
 
                             <h2 data-seq >{{$rs->price}}$</h2>
                             <p data-seq style="color:red">{{$rs->title}}</p>
-                            <a data-seq href="{{route('car',['id' => $rs->id])}}" class="aa-shop-now-btn aa-secondary-btn">SHOP NOW</a>
+                            <a data-seq href="{{route('car',['id' => $rs->id])}}" class="aa-shop-now-btn aa-secondary-btn">Quick View</a>
                         </div>
                     </li>
                     <!-- single slide item -->

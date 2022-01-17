@@ -26,7 +26,7 @@
                                             <br>
                                         </div>
                                         <div class="table-responsive table--no-card m-b-30">
-                                            <table class="table table-borderless table-striped ">
+                                            <table class="table table-bordered table-striped ">
                                                 <thead>
                                                 <tr>
                                                     <th>ID</th>

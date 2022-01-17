@@ -127,37 +127,7 @@
                                         </div>
 
                                     </div>
-                                    {{--                                                   <div class="row form-group">--}}
-                                    {{--                                                        <div class="col col-md-3">--}}
-                                    {{--                                                            <label>Make</label>--}}
-                                    {{--                                                        </div>--}}
-                                    {{--                                                        <div class="col-12 col-md-9">--}}
-                                    {{--                                                            <input type="text" id="text-input" name="make" placeholder="Text" class="form-control">--}}
-
-                                    {{--                                                        </div>--}}
-
-                                    {{--                                                    </div>--}}
-                                    {{--                                                    <div class="row form-group">--}}
-                                    {{--                                                        <div class="col col-md-3">--}}
-                                    {{--                                                            <label>Series</label>--}}
-                                    {{--                                                        </div>--}}
-                                    {{--                                                        <div class="col-12 col-md-9">--}}
-                                    {{--                                                            <input type="text" id="text-input" name="series" placeholder="Text" class="form-control">--}}
-
-                                    {{--                                                        </div>--}}
-
-                                    {{--                                                    </div>--}}
-                                    {{--                                                    <div class="row form-group">--}}
-                                    {{--                                                        <div class="col col-md-3">--}}
-                                    {{--                                                            <label>Model</label>--}}
-                                    {{--                                                        </div>--}}
-                                    {{--                                                        <div class="col-12 col-md-9">--}}
-                                    {{--                                                            <input type="text" id="text-input" name="model" placeholder="Text" class="form-control">--}}
-
-                                    {{--                                                        </div>--}}
-
-                                    {{--                                                    </div>--}}
-                                    <div class="row form-group">
+                               <div class="row form-group">
                                         <div class="col col-md-3">
                                             <label>Year</label>
                                         </div>
@@ -395,17 +365,27 @@
 
                                     </div>
 
+
+                                    @php
+                                        $userRoles = Auth::user()->roles->pluck('name');
+                                    @endphp
+                                    @if($userRoles->contains('admin'))
+
                                     <div class="row form-group">
                                         <div class="col col-md-3">
                                             <label>Status</label>
                                         </div>
                                         <div class="col-12 col-md-9">
                                             <select name="status" id="select" class="form-control">
-                                                <option selected = "selected">False</option>
-                                                <option>True</option>
+                                                <option selected = "selected">Waiting</option>
+                                                <option>Denied</option>
+                                                <option>Accepted</option>
                                             </select>
                                         </div>
                                     </div>
+                                    @else
+                                        <input type="hidden" id="status" name="status"  class="form-control" value="Waiting">
+                                    @endif
                                     <div class="card-footer">
                                         <button type="submit" class="btn btn-primary btn-sm">
                                             <i class="fa fa-dot-circle-o"></i> Add Car
