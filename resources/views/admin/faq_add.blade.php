@@ -1,6 +1,6 @@
 @extends('layouts.admin')
 
-@section('title', 'Add Car')
+@section('title', 'FAQ Add')
 @include('admin._header')
 @include('admin._sidebar')
 @include('admin._headerDesktop')

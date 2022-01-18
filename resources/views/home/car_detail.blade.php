@@ -113,7 +113,7 @@
                                                         @if($avgrev>=4) <span class="fa fa-star" ></span>@endif
                                                         @if($avgrev>=5) <span class="fa fa-star" ></span>@endif
                                                     </div>
-                                                    <a >{{$countreview}} Reviews(s) {{$avgrev}} /Add Review</a>
+                                                    <a >{{$countreview}} Review(s) {{$avgrev}}</a>
 
                                                 </div>
                                             </div>

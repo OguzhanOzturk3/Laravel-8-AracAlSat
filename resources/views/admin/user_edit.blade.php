@@ -1,6 +1,6 @@
 @extends('layouts.admin')
 
-@section('title', 'Edit Account')
+@section('title', 'User Edit')
 @include('admin._header')
 @include('admin._sidebar')
 @include('admin._headerDesktop')

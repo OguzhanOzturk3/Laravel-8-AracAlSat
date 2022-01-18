@@ -4,7 +4,7 @@
 
 @extends('layouts.home')
 
-@section('title','User Accepted Reviews' )
+@section('title','My Accepted Reviews' )
 @section('content')
 
     <!-- catg header banner section -->
